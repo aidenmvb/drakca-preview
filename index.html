@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drakca — DL Management</title>
+  <meta name="description" content="Drakca is the public name of DL Management. Vacancies for lease, and improvements and repairs, across Maryland, Virginia, and Washington, D.C.">
+  <meta name="theme-color" content="#142028">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=15">
+</head>
+<body data-page="home">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-type"><span class="brand-name">Drakca</span><span class="brand-sub">DL Management</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-panel">Menu</button>
+      <nav class="nav-panel" id="nav-panel" aria-label="Primary">
+        <a href="properties.html" data-nav="properties">Properties</a>
+        <a href="improvements.html" data-nav="improvements">Repairs</a>
+        <a href="services.html" data-nav="services">Services</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a class="btn nav-inquire" href="contact.html">Inquire</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <img class="hero-media" src="images/hero.jpg" alt="Brick townhouses with black shutters along a tree-lined street.">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-content">
+        <p class="eyebrow">Maryland · Virginia · Washington, D.C.</p>
+        <h1>Space for lease, and the work on it.</h1>
+        <p class="lede">Drakca is the public name of DL Management, a brokerage in Bethesda. The office lists vacancies and arranges improvements and repairs.</p>
+        <p class="hero-actions">
+          <a class="btn" href="#lease">Available for lease</a>
+          <a class="btn-glass" href="improvements.html#estimate">Request an estimate</a>
+        </p>
+        <form class="finder" action="properties.html#page" method="get">
+          <label>
+            <span>Looking for</span>
+            <select name="intent">
+              <option value="">All</option>
+              <option value="rent">For rent</option>
+            </select>
+          </label>
+          <label>
+            <span>Use</span>
+            <select name="type">
+              <option value="">All</option>
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Retail">Retail</option>
+            </select>
+          </label>
+          <label>
+            <span>Market</span>
+            <select name="state">
+              <option value="">All markets</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington, D.C.">Washington, D.C.</option>
+            </select>
+          </label>
+          <label class="finder-query">
+            <span>Search</span>
+            <input type="search" name="q" placeholder="Neighborhood or street" autocomplete="off">
+          </label>
+          <button class="finder-go" type="submit">
+            <span>View properties</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section home-lease" id="lease">
+      <div class="wrap">
+        <div class="lease-intro">
+          <p class="eyebrow">Available for lease</p>
+          <p class="lease-note">Three from the office list. Rent is shown when the office has confirmed it.</p>
+          <a class="lease-all btn-glass" id="lease-all" href="properties.html?intent=rent#page">View all <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="lease-row" id="lease-preview"></div>
+        <p id="lease-empty" class="empty" hidden>Nothing is listed for lease yet. Call the office to ask what is coming open.</p>
+      </div>
+    </section>
+
+    <section class="section home-repairs" id="repairs">
+      <div class="wrap">
+        <div class="section-head-row">
+          <div>
+            <p class="eyebrow">Improvements and repairs</p>
+            <h2>Work on the building, quoted on its own.</h2>
+            <p class="lede">Homes, businesses, and repairs at rental properties. The estimate covers the work. Rent is paid only as rent, under the lease.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn" href="improvements.html#estimate">Request an estimate</a>
+            <a class="btn-line" href="improvements.html#financing">Financing</a>
+            <a class="btn-line" href="improvements.html#maintenance">Maintenance request</a>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <p class="num">Homes</p>
+            <h3>Residential</h3>
+            <p>Improvements and repairs for a house or apartment. Tell us the address and what needs doing.</p>
+          </article>
+          <article class="step">
+            <p class="num">Businesses</p>
+            <h3>Commercial</h3>
+            <p>The same for a shop, an office, or other commercial space. The quote follows a look at the work.</p>
+          </article>
+          <article class="step">
+            <p class="num">Rentals</p>
+            <h3>At a rental property</h3>
+            <p>Work performed at a property that is leased. The invoice is for that work. It is not a rent payment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-markets" id="markets">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Markets</p>
+          <h2>Maryland, Virginia, and the District.</h2>
+          <p class="lede">The office is in Bethesda. Leasing and brokerage run across the capital region.</p>
+        </div>
+        <div class="markets">
+          <a class="market" href="properties.html?state=Maryland#page">
+            <p class="kicker">Headquarters</p>
+            <h3>Maryland</h3>
+            <p>The office is in Bethesda, with work across the state.</p>
+            <span class="btn-glass">View Maryland</span>
+          </a>
+          <a class="market" href="properties.html?state=Virginia#page">
+            <p class="kicker">Northern Virginia</p>
+            <h3>Virginia</h3>
+            <p>Leasing and representation in Northern Virginia.</p>
+            <span class="btn-glass">View Virginia</span>
+          </a>
+          <a class="market" href="properties.html?state=Washington%2C%20D.C.#page">
+            <p class="kicker">The District</p>
+            <h3>Washington, D.C.</h3>
+            <p>Leasing and representation in the District.</p>
+            <span class="btn-glass">View the District</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-practice" id="practice">
+      <div class="wrap">
+        <div class="section-head-row">
+          <div>
+            <p class="eyebrow">Brokerage</p>
+            <h2>Buying and selling, when that is the work.</h2>
+            <p class="lede">Representation for buyers, sellers, and owners still sits with the firm. Vacancies and repairs are listed above.</p>
+          </div>
+          <a class="btn" href="services.html">Full practice</a>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><p class="num">01</p><h3>Buyer representation</h3><p>Search, valuation, and negotiation for residential and investment purchases.</p></article>
+          <article class="service-card"><p class="num">02</p><h3>Seller representation</h3><p>Pricing, preparation, and marketing for owners bringing a property to market.</p></article>
+          <article class="service-card"><p class="num">03</p><h3>Investment property</h3><p>Acquisition and disposition of income property across the capital region.</p></article>
+          <article class="service-card"><p class="num">04</p><h3>Owner advisory</h3><p>Scope and fees are set for the property after a consultation.</p></article>
+          <article class="service-card"><p class="num">05</p><h3>Brokerage</h3><p>DL Management represents clients under the name Drakca.</p></article>
+          <article class="service-card"><p class="num">06</p><h3>Local practice</h3><p>Transactions are handled under the rules of Maryland, Virginia, and the District.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <img src="images/clarendon.jpg" alt="">
+      <div class="band-copy">
+        <p class="eyebrow">For owners</p>
+        <h2>Representation on both sides of the Potomac.</h2>
+        <p>Assignments begin with a consultation at the Bethesda office.</p>
+        <div class="hero-actions">
+          <a class="btn" href="services.html#owners">For owners</a>
+          <a class="btn-glass" href="services.html#owner-start">Discuss a property</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="close">
+      <img src="images/wisconsin.jpg" alt="">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap close-copy">
+        <p class="eyebrow">The office</p>
+        <h2>Call or write.</h2>
+        <p>Vacancies, repairs, and owners. Name the property if you have one.</p>
+        <p class="contact-line">
+          <a data-phone href=""></a>
+          <a data-email href=""></a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <p class="brand-name">Drakca</p>
+        <p>The public name for DL Management, a brokerage based in Bethesda, Maryland.</p>
+      </div>
+      <div>
+        <p class="foot-label">Portfolio</p>
+        <a href="properties.html?state=Washington%2C%20D.C.">Washington, D.C.</a>
+        <a href="properties.html?state=Maryland">Maryland</a>
+        <a href="properties.html?state=Virginia">Virginia</a>
+      </div>
+      <div>
+        <p class="foot-label">Company</p>
+        <a href="properties.html?intent=rent">For lease</a>
+        <a href="improvements.html">Repairs</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <p class="foot-label">Offices</p>
+        <p>Bethesda, Maryland</p>
+        <p>By appointment</p>
+        <p><a data-phone href=""></a></p>
+        <p><a data-email href=""></a></p>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <span class="eho">Equal Housing Opportunity</span>
+      <span>© <span id="year">2026</span> Drakca</span>
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/portal-config.js"></script>
+  <script src="js/portal-listings.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

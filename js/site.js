@@ -1,0 +1,631 @@
+(function () {
+  let properties = [];
+  let listingsUnavailable = false;
+  const listingsUnavailableMessage = "The property list cannot be loaded right now. Please try again shortly, or call the office.";
+  const page = document.body.dataset.page || "";
+
+  document.querySelectorAll("[data-phone]").forEach((el) => {
+    if (!DRAKA.contact.phone) {
+      el.remove();
+      return;
+    }
+    el.textContent = DRAKA.contact.phone;
+    if (el.tagName === "A") el.href = DRAKA.contact.phoneHref;
+  });
+  document.querySelectorAll("[data-email]").forEach((el) => {
+    if (!DRAKA.contact.email) {
+      el.remove();
+      return;
+    }
+    el.textContent = DRAKA.contact.email;
+    if (el.tagName === "A") el.href = DRAKA.contact.emailHref;
+  });
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  const navKey = page === "property" ? "properties" : page;
+  document.querySelectorAll("[data-nav]").forEach((link) => {
+    if (link.dataset.nav === navKey) link.setAttribute("aria-current", "page");
+  });
+
+  const header = document.getElementById("header");
+  const panel = document.getElementById("nav-panel");
+  const menuButton = document.querySelector(".menu-toggle");
+  if (panel && menuButton) {
+    const setOpen = (open) => {
+      panel.classList.toggle("is-open", open);
+      menuButton.setAttribute("aria-expanded", open ? "true" : "false");
+      menuButton.textContent = open ? "Close" : "Menu";
+      document.body.classList.toggle("nav-open", open);
+    };
+    menuButton.addEventListener("click", () => setOpen(menuButton.getAttribute("aria-expanded") !== "true"));
+    panel.addEventListener("click", (event) => {
+      if (event.target.closest("a")) setOpen(false);
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && panel.classList.contains("is-open")) {
+        setOpen(false);
+        menuButton.focus();
+      }
+    });
+  }
+  if (header) {
+    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 4);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  const resultCount = document.getElementById("result-count");
+  if (resultCount) resultCount.textContent = "Loading listings.";
+  const propertyRoot = document.getElementById("property");
+  if (propertyRoot) {
+    propertyRoot.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="lede">Loading listings.</p></div></section>';
+  }
+  initForms();
+  loadPortalInventory();
+
+  async function loadPortalInventory() {
+    try {
+      if (typeof loadPortalListings !== "function") throw new Error("The listings feed is not configured.");
+      const remote = await loadPortalListings();
+      if (Array.isArray(remote) && remote.length) properties = remote;
+    } catch (error) {
+      properties = DRAKA.properties.slice();
+    }
+    if (!properties.length) properties = DRAKA.properties.slice();
+    renderLeasePreview();
+    const book = initBook();
+    if (!book) bindFinders(null);
+    initProperty();
+  }
+
+  function renderLeasePreview() {
+    const leasePreview = document.getElementById("lease-preview");
+    if (!leasePreview) return;
+    const viewAll = document.getElementById("lease-all");
+    const leaseEmpty = document.getElementById("lease-empty");
+    if (listingsUnavailable) {
+      leasePreview.hidden = true;
+      leasePreview.innerHTML = "";
+      if (viewAll) viewAll.hidden = true;
+      if (leaseEmpty) {
+        leaseEmpty.hidden = false;
+        leaseEmpty.textContent = listingsUnavailableMessage;
+      }
+      return;
+    }
+    const preview = previewVacancies(properties);
+    leasePreview.hidden = preview.length === 0;
+    leasePreview.innerHTML = preview.map((property) => previewCard(property)).join("");
+    if (viewAll) viewAll.hidden = preview.length === 0;
+    if (leaseEmpty) leaseEmpty.hidden = preview.length !== 0;
+  }
+
+  function esc(value) {
+    return String(value ?? "").replace(/[&<>"']/g, (ch) => (
+      { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]
+    ));
+  }
+
+  function hoverFacts(property) {
+    const lines = [];
+    if (property.neighborhood) lines.push(property.neighborhood);
+    if (property.price) lines.push(property.price);
+    else if (property.scale) lines.push(property.scale);
+    const rooms = [property.beds, property.baths].filter(Boolean);
+    if (rooms.length) lines.push(rooms.join(" · "));
+    if (property.available) lines.push(property.available);
+    else if (property.type) lines.push(property.type);
+    return lines.slice(0, 4);
+  }
+
+  function offersRent(property) {
+    return property.intent === "rent" || property.intent === "both";
+  }
+
+  function offersSale(property) {
+    return property.intent === "sale" || property.intent === "both";
+  }
+
+  function matchesIntent(property, intent) {
+    if (!intent || intent === "All") return true;
+    if (intent === "rent") return offersRent(property);
+    if (intent === "sale") return offersSale(property);
+    return property.intent === intent;
+  }
+
+  function offeringLabel(property) {
+    if (property.intent === "both") return "For lease and for sale";
+    if (property.intent === "sale") return "For sale";
+    if (property.intent === "rent") return "For lease";
+    return property.role || "Owned";
+  }
+
+  function previewVacancies(list) {
+    const leases = list.filter((property) => offersRent(property));
+    const picked = [];
+    const streets = new Set();
+    const take = (property) => {
+      if (!property || picked.includes(property) || streets.has(property.street) || picked.length >= 3) return;
+      streets.add(property.street);
+      picked.push(property);
+    };
+    const priced = leases.find((property) => property.price);
+    take(priced);
+    const commercial = leases
+      .filter((property) => property.type !== "Residential" && !streets.has(property.street))
+      .sort((a, b) => a.street.length - b.street.length)[0];
+    take(commercial);
+    const homeState = priced ? priced.state : "";
+    const elsewhere = leases
+      .filter((property) => property.state !== homeState && !streets.has(property.street))
+      .sort((a, b) => a.street.length - b.street.length)[0];
+    take(elsewhere);
+    leases.forEach(take);
+    return picked;
+  }
+
+  function markLetter(property) {
+    const source = String(property.street || property.name || "");
+    const skip = /^(street|st|avenue|ave|road|rd|way|boulevard|blvd|place|pl|northwest|northeast|drive|dr)$/i;
+    const word = source.split(/\s+/).find((part) => /^[A-Za-z]/.test(part) && !skip.test(part));
+    if (word) return word.charAt(0).toUpperCase();
+    const place = String(property.neighborhood || property.state || "");
+    const letter = place.match(/[A-Za-z]/);
+    return letter ? letter[0].toUpperCase() : "·";
+  }
+
+  function leaseCard(property) {
+    const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
+    const note = [property.price, property.available ? "Available " + property.available : ""].filter(Boolean).join(" · ");
+    const kind = offeringLabel(property);
+    const photo = property.image
+      ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"></figure>'
+      : "";
+    return (
+      '<a class="card" href="property.html?id=' + esc(property.id) + '">' +
+        photo +
+        '<div class="card-body">' +
+          '<p class="kicker">' + esc(kind) + (property.role && property.intent !== "owned" ? " · " + esc(property.role) : "") + (property.type ? " · " + esc(property.type) : "") + "</p>" +
+          "<h3>" + esc(property.name) + "</h3>" +
+          (place ? '<p class="meta">' + esc(place) + "</p>" : "") +
+          (note ? '<p class="open-note">' + esc(note) + "</p>" : "") +
+        "</div>" +
+      "</a>"
+    );
+  }
+
+  function previewCard(property) {
+    const place = property.neighborhood || property.state || "For lease";
+    const region = property.neighborhood && property.state ? property.state : "";
+    const kicker = property.intent === "both"
+      ? "For lease and for sale"
+      : (property.type && property.type !== "Residential" ? property.type : offeringLabel(property));
+    const blurb = property.price
+      ? "Offered at " + property.price + (property.available ? ", available " + property.available : "") + "."
+      : property.intent === "sale"
+        ? "For sale. Ask the office for the price."
+        : property.intent === "both"
+          ? (property.unit ? property.unit + ". " : "") + "For lease and for sale."
+          : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Ask the office for the rent." : "Ask the office for the details.");
+    const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    return (
+      '<a class="preview-card" href="property.html?id=' + esc(property.id) + '">' +
+        '<span class="preview-face">' +
+          '<span class="preview-kicker">' + esc(kicker) + "</span>" +
+          '<span class="preview-mark">' + esc(place) + "</span>" +
+          (region ? '<span class="preview-where">' + esc(region) + "</span>" : "") +
+        "</span>" +
+        '<span class="preview-body">' +
+          '<span class="preview-title">' + esc(property.street || property.name) + "</span>" +
+          '<span class="preview-copy">' + esc(blurb) + "</span>" +
+          '<span class="preview-link btn-glass">View property ' + arrow + "</span>" +
+        "</span>" +
+      "</a>"
+    );
+  }
+
+  function bubble(property) {
+    const facts = hoverFacts(property).map((line) => "<span>" + esc(line) + "</span>").join("");
+    const face = property.image
+      ? "<img src=\"" + esc(property.image) + "\" alt=\"\" style=\"object-position:" + esc(property.pos || "center") + "\">"
+      : "<span class=\"bubble-mark\" aria-hidden=\"true\">" + esc(markLetter(property)) + "</span>";
+    const label = property.street || property.name;
+    const place = [
+      property.type && property.type !== "Residential" ? property.type : "",
+      property.neighborhood || property.state,
+    ].filter(Boolean).join(" · ");
+    return (
+      '<a class="bubble" href="property.html?id=' + esc(property.id) + '" title="' + esc(property.name) + '">' +
+        '<span class="bubble-photo">' +
+          face +
+          '<span class="bubble-facts" aria-hidden="true">' + facts + "</span>" +
+        "</span>" +
+        '<span class="bubble-name">' + esc(label) + "</span>" +
+        (place ? '<span class="bubble-place">' + esc(place) + "</span>" : "") +
+      "</a>"
+    );
+  }
+
+  function matchesUse(property, type) {
+    if (!type || type === "All") return true;
+    if (type === "Commercial") return ["Commercial", "Mixed-use", "Office", "Retail"].includes(property.type);
+    return property.type === type;
+  }
+
+  function fillFinderMenus() {
+    const hasSale = properties.some((property) => offersSale(property));
+    const uses = ["Residential", "Commercial", "Retail"].filter((type) => properties.some((property) => matchesUse(property, type)));
+    const markets = ["Maryland", "Virginia", "Washington, D.C."].filter((market) => properties.some((property) => property.state === market));
+    const options = (pairs) => pairs.map(([value, label]) => '<option value="' + esc(value) + '">' + esc(label) + "</option>").join("");
+    document.querySelectorAll("form.finder").forEach((form) => {
+      if (form.elements.intent) {
+        const intents = [["", "All"], ["rent", "For rent"]];
+        if (hasSale) intents.push(["sale", "For sale"]);
+        form.elements.intent.innerHTML = options(intents);
+      }
+      if (form.elements.type) {
+        form.elements.type.innerHTML = options([["", "All"]].concat(uses.map((type) => [type, type])));
+      }
+      if (form.elements.state) {
+        form.elements.state.innerHTML = options([["", "All markets"]].concat(markets.map((market) => [market, market])));
+      }
+    });
+  }
+
+  function bindFinders(book) {
+    fillFinderMenus();
+    document.querySelectorAll("form.finder").forEach((form) => {
+      const params = new URLSearchParams(location.search);
+      ["intent", "type", "state", "q"].forEach((name) => {
+        const field = form.elements[name];
+        const value = params.get(name);
+        if (field && value) field.value = value;
+      });
+      const apply = () => {
+        const intent = form.elements.intent.value || "All";
+        const type = form.elements.type.value || "All";
+        const market = form.elements.state.value || "All";
+        const q = form.elements.q.value.trim();
+        if (book) {
+          book.state.intent = intent;
+          book.state.type = type;
+          book.state.state = market;
+          book.state.q = q;
+          book.write();
+          return;
+        }
+        const next = new URLSearchParams();
+        if (intent !== "All") next.set("intent", intent);
+        if (type !== "All") next.set("type", type);
+        if (market !== "All") next.set("state", market);
+        if (q) next.set("q", q);
+        const query = next.toString();
+        location.href = "properties.html" + (query ? "?" + query : "") + "#page";
+      };
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        apply();
+        if (book) document.getElementById("page")?.scrollIntoView({ behavior: "smooth" });
+      });
+      if (book) {
+        form.addEventListener("change", apply);
+        form.elements.q.addEventListener("input", apply);
+      }
+    });
+  }
+
+  function initBook() {
+    const filters = document.getElementById("filters");
+    const book = document.getElementById("book");
+    if (!filters || !book) return null;
+    const count = document.getElementById("result-count");
+    const empty = document.getElementById("empty");
+    const emptyCopy = empty ? empty.querySelector("p") : null;
+    const params = new URLSearchParams(location.search);
+    let type = params.get("type") || "All";
+    if (type === "Office" || type === "Mixed-use") type = "Commercial";
+    const state = {
+      intent: params.get("intent") || "All",
+      state: params.get("state") || "All",
+      role: params.get("role") || "All",
+      type,
+      open: params.get("open") === "1",
+      q: params.get("q") || "",
+    };
+    const groups = properties.some((property) => property.role)
+      ? [["role", "Ownership", [["All", "All"], ["Owned", "Owned"], ["Managed", "Managed"]]]]
+      : [];
+    filters.innerHTML = groups.map(([key, label, values]) =>
+      '<div class="filter-row" role="group" aria-label="' + esc(label) + '">' +
+        '<span class="filter-label">' + esc(label) + "</span>" +
+        values.map(([value, text]) =>
+          '<button type="button" class="chip" data-key="' + key + '" data-value="' + esc(value) + '">' + esc(text) + "</button>"
+        ).join("") +
+      "</div>"
+    ).join("") +
+      '<div class="filter-row"><span class="filter-label">Availability</span><button type="button" class="chip" data-key="open" data-value="1">Open now</button></div>';
+
+    function describe() {
+      const bits = [];
+      if (state.intent === "sale") bits.push("for sale");
+      if (state.intent === "rent") bits.push("for lease");
+      if (state.type !== "All") bits.push(state.type.toLowerCase());
+      if (state.role !== "All") bits.push(state.role.toLowerCase());
+      if (state.open) bits.push("open now");
+      let text = bits.join(", ");
+      if (state.state !== "All") text = (text ? text + " in " : "in ") + state.state;
+      if (state.q) text = (text ? text + ", " : "") + "matching “" + state.q + "”";
+      return text;
+    }
+
+    function write() {
+      const next = new URLSearchParams();
+      if (state.intent !== "All") next.set("intent", state.intent);
+      if (state.state !== "All") next.set("state", state.state);
+      if (state.role !== "All") next.set("role", state.role);
+      if (state.type !== "All") next.set("type", state.type);
+      if (state.open) next.set("open", "1");
+      if (state.q) next.set("q", state.q);
+      const query = next.toString();
+      history.replaceState(null, "", (query ? "?" + query : location.pathname) + location.hash);
+      render();
+    }
+
+    function render() {
+      if (listingsUnavailable) {
+        book.innerHTML = "";
+        book.hidden = true;
+        if (count) {
+          count.hidden = false;
+          count.textContent = "Listings are unavailable right now.";
+        }
+        const unavailableClear = document.getElementById("clear-filters");
+        if (unavailableClear) unavailableClear.hidden = true;
+        if (empty) {
+          empty.hidden = false;
+          if (emptyCopy) emptyCopy.textContent = listingsUnavailableMessage;
+        }
+        return;
+      }
+      filters.querySelectorAll(".chip").forEach((button) => {
+        const key = button.dataset.key;
+        const on = key === "open" ? state.open : state[key] === button.dataset.value;
+        button.classList.toggle("is-on", on);
+        button.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      document.querySelectorAll("form.finder").forEach((form) => {
+        if (document.activeElement && form.contains(document.activeElement) && document.activeElement.name === "q") return;
+        if (form.elements.intent) form.elements.intent.value = state.intent === "All" ? "" : state.intent;
+        if (form.elements.type) form.elements.type.value = state.type === "All" ? "" : state.type;
+        if (form.elements.state) form.elements.state.value = state.state === "All" ? "" : state.state;
+        if (form.elements.q) form.elements.q.value = state.q;
+      });
+      const query = state.q.toLowerCase();
+      const list = properties.filter((property) => {
+        if (!matchesIntent(property, state.intent)) return false;
+        if (state.state !== "All" && property.state !== state.state) return false;
+        if (state.role !== "All" && property.role !== state.role) return false;
+        if (!matchesUse(property, state.type)) return false;
+        if (state.open && property.open !== true) return false;
+        if (query) {
+          const story = Array.isArray(property.story) ? property.story.join(" ") : property.story;
+          const haystack = [property.name, property.neighborhood, story, property.state, property.street, property.unit, property.type, property.scale, property.price, property.intent].join(" ").toLowerCase();
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+      const search = describe();
+      const clear = document.getElementById("clear-filters");
+      if (count) {
+        const noun = list.length === 1 ? " property" : " properties";
+        if (properties.length) {
+          count.hidden = false;
+          count.textContent = list.length + noun + (search ? " · " + search : "");
+        } else {
+          count.hidden = !search;
+          count.textContent = search ? "Filtered to " + search + "." : "";
+        }
+      }
+      if (clear) clear.hidden = !search;
+      book.innerHTML = list.map(leaseCard).join("");
+      book.hidden = list.length === 0;
+      if (empty) {
+        empty.hidden = list.length !== 0;
+        if (emptyCopy) {
+          emptyCopy.textContent = properties.length
+            ? (search ? "Nothing in the portfolio matches " + search + "." : "Nothing in the portfolio matches.")
+            : "Active listings are provided by the office. Contact Drakca to discuss a property in Maryland, Virginia, or Washington, D.C.";
+        }
+      }
+    }
+
+    filters.addEventListener("click", (event) => {
+      const button = event.target.closest(".chip");
+      if (!button) return;
+      if (button.dataset.key === "open") state.open = !state.open;
+      else state[button.dataset.key] = button.dataset.value;
+      write();
+    });
+    const clear = document.getElementById("clear-filters");
+    if (clear) {
+      clear.addEventListener("click", () => {
+        state.intent = "All";
+        state.state = "All";
+        state.role = "All";
+        state.type = "All";
+        state.open = false;
+        state.q = "";
+        write();
+      });
+    }
+    const api = { state, write };
+    bindFinders(api);
+    render();
+    return api;
+  }
+
+  function detailFacts(property) {
+    const year = property.year
+      ? (property.renewed ? property.year + ", renewed " + property.renewed : String(property.year))
+      : "";
+    return [
+      ["Jurisdiction", property.state],
+      ["Neighborhood", property.neighborhood],
+      ["Address", property.street],
+      ["Unit", property.unit],
+      ["Use", property.type],
+      ["Price", property.price],
+      ["Bedrooms", property.beds],
+      ["Baths", property.baths],
+      ["Size", property.scale],
+      ["Available", property.available],
+      ["Year", year],
+      ["Transit", property.metro],
+    ].filter(([, value]) => value);
+  }
+
+  function initProperty() {
+    const root = document.getElementById("property");
+    if (!root) return;
+    if (listingsUnavailable) {
+      document.title = "Listings unavailable — Drakca";
+      root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>Listings are unavailable right now.</h1><p class="lede">' + esc(listingsUnavailableMessage) + '</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
+      return;
+    }
+    const id = new URLSearchParams(location.search).get("id");
+    const property = properties.find((item) => item.id === id);
+    if (!property) {
+      document.title = "Property not found — Drakca";
+      root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>That property is not listed.</h1><p class="lede">The full list is on the properties page.</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
+      return;
+    }
+    document.title = property.name + " — Drakca";
+    const story = Array.isArray(property.story) ? property.story : [];
+    const gallery = (property.gallery || []).map((image) =>
+      '<img src="' + esc(image.src) + '" alt="' + esc(image.alt) + '" loading="lazy">'
+    ).join("");
+    const applyHref = property.applyHref || ("contact.html?property=" + encodeURIComponent(property.name) + "&topic=apply");
+    const tourHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=tour";
+    const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
+    const kind = offeringLabel(property);
+    const chips = [kind, property.role && property.role !== kind ? property.role : "", property.type, property.available ? "Available " + property.available : ""].filter(Boolean);
+    const factItems = [
+      ["Bedrooms", property.beds],
+      ["Baths", property.baths],
+      ["Size", property.scale],
+    ].filter(([, value]) => value);
+    const facts = factItems.length
+      ? '<dl class="facts">' + factItems.map(([label, value]) => "<div><dt>" + esc(label) + "</dt><dd>" + esc(value) + "</dd></div>").join("") + "</dl>"
+      : "";
+    const stage = property.image || "images/hero.jpg";
+    const contact = DRAKA.contact || {};
+    root.innerHTML =
+      '<article class="listing" id="page">' +
+        '<div class="wrap">' +
+          '<p class="listing-back"><a class="btn-glass" href="properties.html">All properties</a></p>' +
+          '<figure class="listing-photo">' +
+            '<img src="' + esc(stage) + '" alt="' + esc(property.image ? (property.alt || "") : "") + '"' +
+              (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
+            (property.image ? "" : '<span class="btn-glass listing-photo-note">Photos of this unit are not posted yet</span>') +
+          "</figure>" +
+          '<div class="listing-body">' +
+            '<div class="listing-copy">' +
+              (property.price ? '<p class="listing-price">' + esc(property.price) + "</p>" : "") +
+              "<h1>" + esc(property.name) + "</h1>" +
+              (place ? '<p class="listing-place">' + esc(place) + "</p>" : "") +
+              '<p class="listing-meta">' + chips.map((chip) => "<span>" + esc(chip) + "</span>").join("") + "</p>" +
+              facts +
+              '<div class="story">' + story.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>" +
+              (gallery ? '<div class="gallery">' + gallery + "</div>" : "") +
+            "</div>" +
+            '<aside class="listing-card">' +
+              '<p class="kicker">The office</p>' +
+              "<h2>See this property</h2>" +
+              "<p>Name this property when you write. The office replies at the email you send from.</p>" +
+              '<div class="listing-actions">' +
+                '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
+                '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>' +
+                (contact.phoneHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.phoneHref) + '">' + esc(contact.phone) + "</a>" : "") +
+                (contact.emailHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.emailHref) + '">' + esc(contact.email) + "</a>" : "") +
+              "</div>" +
+            "</aside>" +
+          "</div>" +
+        "</div>" +
+      "</article>";
+  }
+
+  function initForms() {
+    const params = new URLSearchParams(location.search);
+    document.querySelectorAll(".desk-form").forEach((form) => {
+      const named = params.get("property") || params.get("building");
+      const topic = params.get("topic");
+      if (named && form.elements.subject && !form.elements.subject.value) form.elements.subject.value = named;
+      const slot = form.dataset.topic || "";
+      const topicFits = !slot || slot === topic || (slot === "maintenance" && topic === "resident");
+      if (topic && form.elements.who && topicFits) {
+        if (topic === "apply") form.elements.who.value = "Applying for a property";
+        if (topic === "availability") form.elements.who.value = "Looking for a home or a shop";
+        if (topic === "owner") form.elements.who.value = "An owner";
+        if (topic === "resident" && slot !== "maintenance") form.elements.who.value = "A resident";
+        if (topic === "brokerage") form.elements.who.value = "Buying or selling";
+        if (topic === "estimate") form.elements.who.value = "Requesting an estimate";
+        if (topic === "tour") form.elements.who.value = "Scheduling a tour";
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        form.querySelectorAll(".error").forEach((node) => node.remove());
+        form.querySelectorAll("[aria-invalid]").forEach((node) => node.removeAttribute("aria-invalid"));
+        const checks = [
+          [form.elements.name, form.elements.name.value.trim().length > 1, "Enter your name."],
+          [form.elements.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.elements.email.value.trim()), "Enter a valid email."],
+          [form.elements.message, form.elements.message.value.trim().length >= 8, "Add a short note so we know how to help."],
+        ];
+        if (form.elements.subject && form.elements.subject.required) {
+          checks.push([form.elements.subject, form.elements.subject.value.trim().length > 1, "Name the property."]);
+        }
+        let valid = true;
+        checks.forEach(([field, ok, message]) => {
+          if (ok) return;
+          valid = false;
+          field.setAttribute("aria-invalid", "true");
+          const note = document.createElement("p");
+          note.className = "error";
+          note.textContent = message;
+          field.closest(".field").appendChild(note);
+        });
+        if (!valid) {
+          form.querySelector("[aria-invalid]").focus();
+          return;
+        }
+        const entry = Object.fromEntries(new FormData(form).entries());
+        entry.at = new Date().toISOString();
+        const notes = JSON.parse(localStorage.getItem("dracka.notes") || "[]");
+        notes.push(entry);
+        localStorage.setItem("dracka.notes", JSON.stringify(notes));
+        const lines = [
+          "Name: " + entry.name,
+          "Email: " + entry.email,
+          "Phone: " + (entry.phone || "—"),
+          "I am: " + (entry.who || "—"),
+        ];
+        if (entry.place) lines.push("Kind of property: " + entry.place);
+        lines.push("About: " + (entry.subject || "—"), "", entry.message);
+        const mail = new URLSearchParams({
+          subject: "Drakca — " + (entry.who || "Inquiry") + (entry.subject ? " — " + entry.subject : ""),
+          body: lines.join("\n"),
+        });
+        const success = form.parentElement.querySelector(".form-success");
+        const mailLink = success.querySelector("[data-mailto]");
+        const href = DRAKA.contact.emailHref ? DRAKA.contact.emailHref + "?" + mail.toString() : "";
+        if (mailLink && href) mailLink.href = href;
+        else if (mailLink) mailLink.remove();
+        form.hidden = true;
+        success.hidden = false;
+        success.focus();
+        if (href) window.location.href = href;
+      });
+    });
+  }
+})();
