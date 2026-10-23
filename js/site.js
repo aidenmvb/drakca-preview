@@ -1,7 +1,7 @@
 (function () {
   let properties = [];
   let listingsUnavailable = false;
-  const listingsUnavailableMessage = "The property list cannot be loaded right now. Please try again shortly, or call the office.";
+  const listingsUnavailableMessage = "The property list cannot be loaded right now. Please try again shortly, or call us.";
   const page = document.body.dataset.page || "";
 
   document.querySelectorAll("[data-phone]").forEach((el) => {
@@ -204,10 +204,10 @@
     const blurb = property.price
       ? "Offered at " + property.price + (property.available ? ", available " + property.available : "") + "."
       : property.intent === "sale"
-        ? "For sale. Ask the office for the price."
+        ? "For sale. Ask us for the price."
         : property.intent === "both"
           ? (property.unit ? property.unit + ". " : "") + "For lease and for sale."
-          : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Ask the office for the rent." : "Ask the office for the details.");
+          : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Ask us for the rent." : "Ask us for the details.");
     const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     return (
       '<a class="preview-card" href="property.html?id=' + esc(property.id) + '">' +
@@ -435,7 +435,7 @@
         if (emptyCopy) {
           emptyCopy.textContent = properties.length
             ? (search ? "Nothing in the portfolio matches " + search + "." : "Nothing in the portfolio matches.")
-            : "Active listings are provided by the office. Contact Drakca to discuss a property in Maryland, Virginia, or Washington, D.C.";
+            : "Contact DRAKA about a property in Maryland, Virginia, or Washington, D.C.";
         }
       }
     }
@@ -489,18 +489,18 @@
     const root = document.getElementById("property");
     if (!root) return;
     if (listingsUnavailable) {
-      document.title = "Listings unavailable — Drakca";
+      document.title = "Listings unavailable — DRAKA";
       root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>Listings are unavailable right now.</h1><p class="lede">' + esc(listingsUnavailableMessage) + '</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
       return;
     }
     const id = new URLSearchParams(location.search).get("id");
     const property = properties.find((item) => item.id === id);
     if (!property) {
-      document.title = "Property not found — Drakca";
+      document.title = "Property not found — DRAKA";
       root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>That property is not listed.</h1><p class="lede">The full list is on the properties page.</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
       return;
     }
-    document.title = property.name + " — Drakca";
+    document.title = property.name + " — DRAKA";
     const story = Array.isArray(property.story) ? property.story : [];
     const gallery = (property.gallery || []).map((image) =>
       '<img src="' + esc(image.src) + '" alt="' + esc(image.alt) + '" loading="lazy">'
@@ -540,9 +540,9 @@
               (gallery ? '<div class="gallery">' + gallery + "</div>" : "") +
             "</div>" +
             '<aside class="listing-card">' +
-              '<p class="kicker">The office</p>' +
+              '<p class="kicker">Contact</p>' +
               "<h2>See this property</h2>" +
-              "<p>Name this property when you write. The office replies at the email you send from.</p>" +
+              "<p>Name this property when you write. We reply to the email you send.</p>" +
               '<div class="listing-actions">' +
                 '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
                 '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>' +
@@ -613,7 +613,7 @@
         if (entry.place) lines.push("Kind of property: " + entry.place);
         lines.push("About: " + (entry.subject || "—"), "", entry.message);
         const mail = new URLSearchParams({
-          subject: "Drakca — " + (entry.who || "Inquiry") + (entry.subject ? " — " + entry.subject : ""),
+          subject: "DRAKA — " + (entry.who || "Inquiry") + (entry.subject ? " — " + entry.subject : ""),
           body: lines.join("\n"),
         });
         const success = form.parentElement.querySelector(".form-success");

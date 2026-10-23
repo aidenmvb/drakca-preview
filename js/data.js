@@ -6,7 +6,7 @@
    someone can move in now. Commercial search matches Commercial,
    Mixed-use, Office, and Retail. */
 const DRAKA = {
-  name: "Drakca",
+  name: "DRAKA",
   firm: "DL Management",
   contact: {
     phone: "202-413-9222",
@@ -35,7 +35,7 @@ const DRAKA = {
       summary: "For lease at $6,000 a month, available December 2026.",
       story: [
         "1607 Lansdowne Way in Silver Spring is offered for lease at $6,000 a month, available December 2026.",
-        "The office can confirm the size and the rest of the lease terms, and a time to see it. Those details are posted when they are confirmed."
+        "We can confirm the size and the remaining lease terms, and a time to see it. Those details are posted once they are confirmed."
       ]
     },
     {
@@ -53,7 +53,7 @@ const DRAKA = {
       summary: "Unit 103 at 11212 Grandview Avenue in Wheaton, Maryland is vacant and available now.",
       story: [
         "Unit 103 at 11212 Grandview Avenue in Wheaton, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -71,7 +71,7 @@ const DRAKA = {
       summary: "Unit 107 at 11212 Grandview Avenue in Wheaton, Maryland is vacant and available now.",
       story: [
         "Unit 107 at 11212 Grandview Avenue in Wheaton, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -91,7 +91,7 @@ const DRAKA = {
       summary: "Atrium 104 at 1530 Key Boulevard in Arlington, Virginia is vacant and available now.",
       story: [
         "Atrium 104 at 1530 Key Boulevard in Arlington, Virginia is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -109,7 +109,7 @@ const DRAKA = {
       summary: "Unit 608 at 1530 Key Boulevard in Arlington, Virginia is vacant and available now.",
       story: [
         "Unit 608 at 1530 Key Boulevard in Arlington, Virginia is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -126,7 +126,7 @@ const DRAKA = {
       summary: "Lower Level at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is for lease and for sale.",
       story: [
         "Lower Level at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is for lease and for sale.",
-        "Ask the office for the price, the rent, and a time to see it."
+        "Contact us for the price, the rent, and a time to see it."
       ]
     },
     {
@@ -143,7 +143,7 @@ const DRAKA = {
       summary: "Unit 4A at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is for lease and for sale.",
       story: [
         "Unit 4A at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is for lease and for sale.",
-        "Ask the office for the price, the rent, and a time to see it."
+        "Contact us for the price, the rent, and a time to see it."
       ]
     },
     {
@@ -160,7 +160,7 @@ const DRAKA = {
       summary: "3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -178,7 +178,7 @@ const DRAKA = {
       summary: "Unit 1 at 3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 1 at 3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -196,7 +196,7 @@ const DRAKA = {
       summary: "Unit 2 at 3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 2 at 3323 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -214,7 +214,7 @@ const DRAKA = {
       summary: "Unit 3 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 3 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -232,7 +232,7 @@ const DRAKA = {
       summary: "Unit 8 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 8 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -250,7 +250,7 @@ const DRAKA = {
       summary: "Unit 101 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 101 at 3401 Bunker Hill Road in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -267,7 +267,7 @@ const DRAKA = {
       summary: "3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -285,7 +285,7 @@ const DRAKA = {
       summary: "Apt 1 at 3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Apt 1 at 3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -303,7 +303,7 @@ const DRAKA = {
       summary: "Storefront A at 3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Storefront A at 3817 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -320,7 +320,7 @@ const DRAKA = {
       summary: "3830 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "3830 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -338,7 +338,7 @@ const DRAKA = {
       summary: "Unit 2 at 3837 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 2 at 3837 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -356,7 +356,7 @@ const DRAKA = {
       summary: "Unit 3 at 3837 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "Unit 3 at 3837 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -373,7 +373,7 @@ const DRAKA = {
       summary: "3840 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "3840 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -390,7 +390,7 @@ const DRAKA = {
       summary: "The commercial space at 3850 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "The commercial space at 3850 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -407,7 +407,7 @@ const DRAKA = {
       summary: "3850 34th Street in Mount Rainier, Maryland is vacant and available now.",
       story: [
         "3850 34th Street in Mount Rainier, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -424,7 +424,7 @@ const DRAKA = {
       summary: "4312 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "4312 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -441,7 +441,7 @@ const DRAKA = {
       summary: "4314 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "4314 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -459,7 +459,7 @@ const DRAKA = {
       summary: "Unit 8 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 8 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -477,7 +477,7 @@ const DRAKA = {
       summary: "Unit 10 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 10 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -495,7 +495,7 @@ const DRAKA = {
       summary: "Unit 14/16/17 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 14/16/17 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -513,7 +513,7 @@ const DRAKA = {
       summary: "Unit 103/105 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 103/105 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -531,7 +531,7 @@ const DRAKA = {
       summary: "Unit 106 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 106 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -549,7 +549,7 @@ const DRAKA = {
       summary: "Unit 107 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 107 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -567,7 +567,7 @@ const DRAKA = {
       summary: "Unit 108 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 108 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -585,7 +585,7 @@ const DRAKA = {
       summary: "Unit 110 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 110 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -603,7 +603,7 @@ const DRAKA = {
       summary: "Unit 200 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 200 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -621,7 +621,7 @@ const DRAKA = {
       summary: "Unit 203/205 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 203/205 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -639,7 +639,7 @@ const DRAKA = {
       summary: "Unit 206 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 206 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -657,7 +657,7 @@ const DRAKA = {
       summary: "Unit 207 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 207 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -675,7 +675,7 @@ const DRAKA = {
       summary: "Unit 210 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
       story: [
         "Unit 210 at 4318 Hamilton Street in Hyattsville, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -693,7 +693,7 @@ const DRAKA = {
       summary: "Barber booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Barber booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -711,7 +711,7 @@ const DRAKA = {
       summary: "Booth 1 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 1 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -729,7 +729,7 @@ const DRAKA = {
       summary: "Booth 2 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 2 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -747,7 +747,7 @@ const DRAKA = {
       summary: "Booth 3 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 3 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -765,7 +765,7 @@ const DRAKA = {
       summary: "Booth 4 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 4 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -783,7 +783,7 @@ const DRAKA = {
       summary: "Booth 5 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 5 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -801,7 +801,7 @@ const DRAKA = {
       summary: "Booth 6 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Booth 6 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -819,7 +819,7 @@ const DRAKA = {
       summary: "Unit 105 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
       story: [
         "Unit 105 at 7930-7932 Georgia Avenue in Silver Spring, Maryland is vacant and available now.",
-        "Ask the office for the rent and a time to see it."
+        "Contact us for the rent and a time to see it."
       ]
     },
     {
@@ -834,7 +834,7 @@ const DRAKA = {
       summary: "4719 Stamp Road in Temple Hills, Maryland is an owned property.",
       story: [
         "4719 Stamp Road in Temple Hills, Maryland is an owned property.",
-        "Ask the office whether a space is available and for a time to see it."
+        "Contact us to ask whether a space is available, and for a time to see it."
       ]
     },
     {
@@ -849,7 +849,7 @@ const DRAKA = {
       summary: "950 Sligo Avenue in Silver Spring, Maryland is for sale.",
       story: [
         "950 Sligo Avenue in Silver Spring, Maryland is for sale.",
-        "Ask the office for the price and a time to see it."
+        "Contact us for the price and a time to see it."
       ]
     }
   ]
