@@ -78,6 +78,7 @@ function portalUse(listing) {
 function adaptPortalListing(listing) {
   if (!listing || typeof listing.id !== "string" || !listing.id) return null;
   const photos = Array.isArray(listing.photoUrls) ? listing.photoUrls.map(portalAssetUrl).filter(Boolean) : [];
+  const story = portalStory(listing.description);
   const property = {
     id: listing.id,
     name: listing.title || "",
@@ -88,7 +89,7 @@ function adaptPortalListing(listing) {
     state: portalStateNames[listing.state] || listing.state || "",
     price: formatPortalRent(listing.askingRent),
     available: formatPortalDate(listing.availableDate),
-    story: portalStory(listing.description),
+    story,
     beds: formatPortalCount(listing.bedrooms),
     baths: formatPortalCount(listing.bathrooms),
     scale: formatPortalScale(listing.squareFeet),
@@ -96,10 +97,12 @@ function adaptPortalListing(listing) {
   const use = portalUse(listing);
   if (use) property.type = use;
   if (listing.applicationUrl) property.applyHref = listing.applicationUrl;
+  if (story.length) property.summary = story[0];
   if (photos.length) {
+    const captions = Array.isArray(listing.photoCaptions) ? listing.photoCaptions : [];
     property.image = photos[0];
-    property.alt = property.name;
-    property.gallery = photos.slice(1).map((src) => ({ src: src, alt: property.name }));
+    property.alt = captions[0] || property.name;
+    property.gallery = photos.slice(1).map((src, index) => ({ src: src, alt: captions[index + 1] || property.name }));
   }
   return property;
 }

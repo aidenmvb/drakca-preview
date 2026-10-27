@@ -64,6 +64,10 @@
   initForms();
   loadPortalInventory();
 
+  function propertyHref(property) {
+    return "property.html?id=" + property.id;
+  }
+
   async function loadPortalInventory() {
     try {
       if (typeof loadPortalListings !== "function") throw new Error("The listings feed is not configured.");
@@ -183,11 +187,12 @@
       ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"></figure>'
       : "";
     return (
-      '<a class="card" href="property.html?id=' + esc(property.id) + '">' +
+      '<a class="card" href="' + esc(propertyHref(property)) + '">' +
         photo +
         '<div class="card-body">' +
           '<p class="kicker">' + esc(kind) + (property.role && property.intent !== "owned" ? " · " + esc(property.role) : "") + (property.type ? " · " + esc(property.type) : "") + "</p>" +
           "<h3>" + esc(property.name) + "</h3>" +
+          (property.summary ? '<p class="meta">' + esc(property.summary) + "</p>" : "") +
           (place ? '<p class="meta">' + esc(place) + "</p>" : "") +
           (note ? '<p class="open-note">' + esc(note) + "</p>" : "") +
         "</div>" +
@@ -201,7 +206,9 @@
     const kicker = property.intent === "both"
       ? "For lease and for sale"
       : (property.type && property.type !== "Residential" ? property.type : offeringLabel(property));
-    const blurb = property.price
+    const blurb = property.summary
+      ? property.summary
+      : property.price
       ? "Offered at " + property.price + (property.available ? ", available " + property.available : "") + "."
       : property.intent === "sale"
         ? "For sale. Ask us for the price."
@@ -210,7 +217,7 @@
           : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Ask us for the rent." : "Ask us for the details.");
     const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     return (
-      '<a class="preview-card" href="property.html?id=' + esc(property.id) + '">' +
+      '<a class="preview-card" href="' + esc(propertyHref(property)) + '">' +
         '<span class="preview-face">' +
           '<span class="preview-kicker">' + esc(kicker) + "</span>" +
           '<span class="preview-mark">' + esc(place) + "</span>" +
@@ -236,7 +243,7 @@
       property.neighborhood || property.state,
     ].filter(Boolean).join(" · ");
     return (
-      '<a class="bubble" href="property.html?id=' + esc(property.id) + '" title="' + esc(property.name) + '">' +
+      '<a class="bubble" href="' + esc(propertyHref(property)) + '" title="' + esc(property.name) + '">' +
         '<span class="bubble-photo">' +
           face +
           '<span class="bubble-facts" aria-hidden="true">' + facts + "</span>" +
@@ -493,7 +500,8 @@
       root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>Listings are unavailable right now.</h1><p class="lede">' + esc(listingsUnavailableMessage) + '</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
       return;
     }
-    const id = new URLSearchParams(location.search).get("id");
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
     const property = properties.find((item) => item.id === id);
     if (!property) {
       document.title = "Property not found — DRAKA";
@@ -542,7 +550,7 @@
             '<aside class="listing-card">' +
               '<p class="kicker">Contact</p>' +
               "<h2>See this property</h2>" +
-              "<p>Name this property when you write. We reply to the email you send.</p>" +
+              "<p>Contact us for pricing, availability, or to arrange a viewing.</p>" +
               '<div class="listing-actions">' +
                 '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
                 '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>' +
