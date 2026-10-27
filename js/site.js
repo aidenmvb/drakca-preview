@@ -526,17 +526,20 @@
     const facts = factItems.length
       ? '<dl class="facts">' + factItems.map(([label, value]) => "<div><dt>" + esc(label) + "</dt><dd>" + esc(value) + "</dd></div>").join("") + "</dl>"
       : "";
-    const stage = property.image || "images/hero.jpg";
     const contact = DRAKA.contact || {};
+    const photo = property.image
+      ? '<figure class="listing-photo">' +
+          '<img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"' +
+            (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
+        "</figure>"
+      : '<figure class="listing-photo listing-photo-empty">' +
+          '<p class="listing-photo-note">Photos of this unit are not posted yet</p>' +
+        "</figure>";
     root.innerHTML =
       '<article class="listing" id="page">' +
         '<div class="wrap">' +
           '<p class="listing-back"><a class="btn-glass" href="properties.html">All properties</a></p>' +
-          '<figure class="listing-photo">' +
-            '<img src="' + esc(stage) + '" alt="' + esc(property.image ? (property.alt || "") : "") + '"' +
-              (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
-            (property.image ? "" : '<span class="btn-glass listing-photo-note">Photos of this unit are not posted yet</span>') +
-          "</figure>" +
+          photo +
           '<div class="listing-body">' +
             '<div class="listing-copy">' +
               (property.price ? '<p class="listing-price">' + esc(property.price) + "</p>" : "") +
