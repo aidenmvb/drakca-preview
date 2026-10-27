@@ -110,6 +110,27 @@ const DRAKA = {
       ]
     },
     {
+      id: "key-boulevard",
+      name: "Key Boulevard",
+      intent: "rent",
+      type: "Residential",
+      state: "Virginia",
+      neighborhood: "Arlington",
+      street: "Key Boulevard",
+      role: "Owned",
+      unitUnspecified: true,
+      beds: "2",
+      baths: "2",
+      scale: "1,230 sq ft",
+      price: "$5,000/month",
+      available: "November 1",
+      summary: "Two-bedroom condominium on Key Boulevard in Arlington, about 1,230 square feet.",
+      story: [
+        "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1.",
+        "The home has a private patio, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center and a tennis court. It is wheelchair accessible, smoking is not permitted, and pets are accepted with an additional deposit."
+      ]
+    },
+    {
       id: "1728-1730-connecticut-avenue-northwest-lower-level",
       name: "1728-1730 Connecticut Avenue Northwest, Lower Level",
       intent: "both",
@@ -239,6 +260,48 @@ const DRAKA = {
       summary: "Residence at 3401 Bunker Hill Road in Mount Rainier.",
       story: [
         "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier, in the Gateway Arts District."
+      ]
+    },
+    {
+      id: "3403-bunker-hill-road-live-work",
+      name: "3403 Bunker Hill Road, Live/work",
+      intent: "rent",
+      type: "Mixed-use",
+      state: "Maryland",
+      neighborhood: "Mount Rainier",
+      street: "3403 Bunker Hill Road",
+      role: "Owned",
+      unitUnspecified: true,
+      available: "Now",
+      open: true,
+      price: "$2,000/month",
+      summary: "Live/work space at 3403 Bunker Hill Road, posted at $2,000 a month.",
+      story: [
+        "3403 Bunker Hill Road in Mount Rainier is a live/work apartment, available now. The posted rent is $2,000 a month.",
+        "A tenant can complete renovation work in exchange for a rent credit. The scope, the credit, the timeline, and the lease are agreed in writing. Live/work use depends on the approvals that apply.",
+        "There is no laundry in the building, and parking is on the street."
+      ]
+    },
+    {
+      id: "3403-bunker-hill-road",
+      name: "3403 Bunker Hill Road",
+      intent: "rent",
+      type: "Residential",
+      state: "Maryland",
+      neighborhood: "Mount Rainier",
+      street: "3403 Bunker Hill Road",
+      role: "Owned",
+      unitUnspecified: true,
+      beds: "1",
+      baths: "1",
+      available: "Now",
+      open: true,
+      price: "$1,350/month",
+      summary: "Renovated one-bedroom at 3403 Bunker Hill Road, $1,350 a month plus utilities.",
+      story: [
+        "This is a renovated one-bedroom, one-bathroom apartment at 3403 Bunker Hill Road in Mount Rainier. Rent is $1,350 a month, plus utilities, and it is available now.",
+        "Laundry is in the building, parking is on the street, and smoking is not permitted.",
+        "The apartment is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium."
       ]
     },
     {

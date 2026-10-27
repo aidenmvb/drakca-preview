@@ -545,6 +545,7 @@
               (property.price ? '<p class="listing-price">' + esc(property.price) + "</p>" : "") +
               "<h1>" + esc(property.name) + "</h1>" +
               (place ? '<p class="listing-place">' + esc(place) + "</p>" : "") +
+              (property.unitUnspecified ? '<p class="listing-place">Contact us for further details.</p>' : "") +
               '<p class="listing-meta">' + chips.map((chip) => "<span>" + esc(chip) + "</span>").join("") + "</p>" +
               facts +
               '<div class="story">' + story.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>" +
