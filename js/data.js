@@ -118,6 +118,7 @@ const DRAKA = {
       neighborhood: "Arlington",
       street: "Key Boulevard",
       role: "Owned",
+      reviewOnly: true,
       unitUnspecified: true,
       beds: "2",
       baths: "2",

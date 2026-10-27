@@ -98,7 +98,7 @@
       }
       return;
     }
-    const preview = previewVacancies(properties);
+    const preview = previewVacancies(catalog());
     leasePreview.hidden = preview.length === 0;
     leasePreview.innerHTML = preview.map((property) => previewCard(property)).join("");
     if (viewAll) viewAll.hidden = preview.length === 0;
@@ -260,10 +260,15 @@
     return property.type === type;
   }
 
+  function catalog() {
+    return properties.filter((property) => property.reviewOnly !== true);
+  }
+
   function fillFinderMenus() {
-    const hasSale = properties.some((property) => offersSale(property));
-    const uses = ["Residential", "Commercial", "Retail"].filter((type) => properties.some((property) => matchesUse(property, type)));
-    const markets = ["Maryland", "Virginia", "Washington, D.C."].filter((market) => properties.some((property) => property.state === market));
+    const listed = catalog();
+    const hasSale = listed.some((property) => offersSale(property));
+    const uses = ["Residential", "Commercial", "Retail"].filter((type) => listed.some((property) => matchesUse(property, type)));
+    const markets = ["Maryland", "Virginia", "Washington, D.C."].filter((market) => listed.some((property) => property.state === market));
     const options = (pairs) => pairs.map(([value, label]) => '<option value="' + esc(value) + '">' + esc(label) + "</option>").join("");
     document.querySelectorAll("form.finder").forEach((form) => {
       if (form.elements.intent) {
@@ -340,7 +345,8 @@
       open: params.get("open") === "1",
       q: params.get("q") || "",
     };
-    const groups = properties.some((property) => property.role)
+    const listed = catalog();
+    const groups = listed.some((property) => property.role)
       ? [["role", "Ownership", [["All", "All"], ["Owned", "Owned"], ["Managed", "Managed"]]]]
       : [];
     filters.innerHTML = groups.map(([key, label, values]) =>
@@ -409,7 +415,7 @@
         if (form.elements.q) form.elements.q.value = state.q;
       });
       const query = state.q.toLowerCase();
-      const list = properties.filter((property) => {
+      const list = catalog().filter((property) => {
         if (!matchesIntent(property, state.intent)) return false;
         if (state.state !== "All" && property.state !== state.state) return false;
         if (state.role !== "All" && property.role !== state.role) return false;
@@ -426,7 +432,7 @@
       const clear = document.getElementById("clear-filters");
       if (count) {
         const noun = list.length === 1 ? " property" : " properties";
-        if (properties.length) {
+        if (catalog().length) {
           count.hidden = false;
           count.textContent = list.length + noun + (search ? " · " + search : "");
         } else {
@@ -440,7 +446,7 @@
       if (empty) {
         empty.hidden = list.length !== 0;
         if (emptyCopy) {
-          emptyCopy.textContent = properties.length
+          emptyCopy.textContent = catalog().length
             ? (search ? "Nothing in the portfolio matches " + search + "." : "Nothing in the portfolio matches.")
             : "Contact DRAKA about a property in Maryland, Virginia, or Washington, D.C.";
         }
