@@ -30,12 +30,13 @@ const DRAKA = {
       neighborhood: "Silver Spring",
       street: "1607 Lansdowne Way",
       role: "Owned",
+      scale: "1,216 sq ft",
       price: "$6,000/month",
       available: "December 2026",
-      summary: "For lease at $6,000 a month, available December 2026.",
+      summary: "Single-family house in Silver Spring, for lease at $6,000 a month from December 2026.",
       story: [
-        "1607 Lansdowne Way in Silver Spring, Maryland is offered for lease at $6,000 a month, available December 2026.",
-        "Bedrooms, bathrooms, size, amenities, and photos are not posted.",
+        "1607 Lansdowne Way is a single-family house in Silver Spring, Maryland 20910, offered for lease at $6,000 a month beginning December 2026.",
+        "The Montgomery assessment record describes a brick, one-story dwelling with a basement, built in 1955, in the Northmont subdivision on lot 11, with about 1,216 square feet of structure on a lot of about 6,136 square feet, zoned R-60. The rental listing for this address includes forced-air heat, a washer, a dryer, and a refrigerator. Cats and small dogs are allowed. The posted terms are a one-year lease, and the tenant is responsible for utilities, lawn care, and gutter maintenance.",
       ]
     },
     {
@@ -48,10 +49,10 @@ const DRAKA = {
       street: "11212 Grandview Avenue",
       unit: "Unit 103",
       role: "Owned",
-      summary: "Unit 103 at 11212 Grandview Avenue. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1954 building at 11212 Grandview Avenue.",
       story: [
         "Unit 103 is a residence at 11212 Grandview Avenue in Wheaton, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The Montgomery assessment record for 11212 Grandview Avenue describes a two-story office building from 1954, with a retail-store use, about 8,352 square feet of structure on a lot of about 5,282 square feet, zoned CR60, in Silver Spring 20902. Those figures are for the whole building.",
       ]
     },
     {
@@ -64,10 +65,10 @@ const DRAKA = {
       street: "11212 Grandview Avenue",
       unit: "Unit 107",
       role: "Owned",
-      summary: "Unit 107 at 11212 Grandview Avenue. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1954 building at 11212 Grandview Avenue.",
       story: [
         "Unit 107 is a residence at 11212 Grandview Avenue in Wheaton, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The Montgomery assessment record for 11212 Grandview Avenue describes a two-story office building from 1954, with a retail-store use, about 8,352 square feet of structure on a lot of about 5,282 square feet, zoned CR60, in Silver Spring 20902. Those figures are for the whole building.",
       ]
     },
     {
@@ -80,12 +81,16 @@ const DRAKA = {
       street: "1530 Key Boulevard",
       unit: "Atrium 104",
       role: "Owned",
+      beds: "2",
+      baths: "2",
+      scale: "1,230 sq ft",
       image: "images/key-boulevard-104.jpg",
       alt: "Living room at 1530 Key Boulevard, Atrium 104",
-      summary: "Atrium 104 at 1530 Key Boulevard. A living-room photograph is posted. Rent and layout are not confirmed.",
+      summary: "Two-bedroom condominium at The Atrium, about 1,230 square feet. The living-room photograph is this unit.",
       story: [
-        "Atrium 104 is a residence at 1530 Key Boulevard in Arlington, Virginia.",
-        "The photograph is the living room. Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted.",
+        "Atrium 104 is a condominium at 1530 Key Boulevard in The Atrium, Arlington, Virginia 22209.",
+        "Arlington’s assessment record lists the unit as a 1986 high-rise condominium with about 1,230 square feet on one floor, two bedrooms, one three-fixture bathroom, and one four-fixture bathroom. The record includes a concrete patio of about 360 square feet, and the legal description names parking space 3045.",
+        "The photograph is the living room of this unit. A listing card for the unit also describes forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The Atrium is a condominium built in 1986. The building has a front desk, a fitness center, an outdoor pool, tennis courts, and garage parking.",
       ]
     },
     {
@@ -98,10 +103,13 @@ const DRAKA = {
       street: "1530 Key Boulevard",
       unit: "Unit 608",
       role: "Owned",
-      summary: "Unit 608 at 1530 Key Boulevard. Rent, layout, and photos are not confirmed.",
+      beds: "1",
+      scale: "1,125 sq ft",
+      summary: "One-bedroom condominium at The Atrium, about 1,125 square feet.",
       story: [
-        "Unit 608 is a residence at 1530 Key Boulevard in Arlington, Virginia.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted. The photograph on Atrium 104 is not this unit.",
+        "Unit 608 is a condominium at 1530 Key Boulevard in The Atrium, Arlington, Virginia 22209.",
+        "Arlington’s assessment record lists the unit as a 1986 high-rise condominium, with one bedroom, about 1,125 square feet on one floor, one four-fixture bathroom, and one two-fixture bathroom. The record includes a balcony of about 90 square feet, and the legal description names parking space 1059.",
+        "The Atrium is a condominium built in 1986. The building has a front desk, a fitness center, an outdoor pool, tennis courts, and garage parking. The living-room photograph on the Atrium 104 page is that unit.",
       ]
     },
     {
@@ -113,10 +121,10 @@ const DRAKA = {
       street: "1728-1730 Connecticut Avenue Northwest",
       unit: "Lower Level",
       role: "Owned",
-      summary: "Lower level at 1728-1730 Connecticut Avenue Northwest, offered for lease and for sale.",
+      summary: "Commercial lower level at 1728-1730 Connecticut Avenue Northwest, for lease and for sale.",
       story: [
         "The lower level at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is a commercial space offered for lease and for sale.",
-        "The sale price, the rent, the size, and photos are not posted. A move-in date is not confirmed.",
+        "District records treat the address as one store property, 1728 Connecticut Avenue Northwest, on a lot of about 2,966 square feet. The commercial file shows two brick sections from 1912, about 5,389 square feet and about 5,254 square feet. One section records a 1928 remodel year. Those areas are the building sections.",
       ]
     },
     {
@@ -128,10 +136,10 @@ const DRAKA = {
       street: "1728-1730 Connecticut Avenue Northwest",
       unit: "Unit 4A",
       role: "Owned",
-      summary: "Unit 4A at 1728-1730 Connecticut Avenue Northwest, offered for lease and for sale.",
+      summary: "Residence at 1728-1730 Connecticut Avenue Northwest, for lease and for sale.",
       story: [
-        "Unit 4A at 1728-1730 Connecticut Avenue Northwest in Washington, D.C. is a residence offered for lease and for sale.",
-        "The sale price, the rent, bedrooms, bathrooms, size, and photos are not posted. A move-in date is not confirmed.",
+        "Unit 4A is a residence at 1728-1730 Connecticut Avenue Northwest in Washington, D.C., offered for lease and for sale.",
+        "The property is one store building in the District tax records, with two brick sections from 1912 on a lot of about 2,966 square feet. Those measurements belong to the building.",
       ]
     },
     {
@@ -143,10 +151,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3323 Bunker Hill Road",
       role: "Owned",
-      summary: "3323 Bunker Hill Road. Rent, layout, and photos are not confirmed.",
+      summary: "Residential address at 3323 Bunker Hill Road in Mount Rainier.",
       story: [
-        "3323 Bunker Hill Road in Mount Rainier, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "3323 Bunker Hill Road is a residential address in Mount Rainier, Maryland 20712.",
+        "Prince George’s delivery records list the building, Unit 1, and Unit 2 at this number.",
       ]
     },
     {
@@ -159,10 +167,10 @@ const DRAKA = {
       street: "3323 Bunker Hill Road",
       unit: "Unit 1",
       role: "Owned",
-      summary: "Unit 1 at 3323 Bunker Hill Road. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 1 at 3323 Bunker Hill Road in Mount Rainier.",
       story: [
         "Unit 1 is a residence at 3323 Bunker Hill Road in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "Prince George’s delivery records list Unit 1 and Unit 2 at this address.",
       ]
     },
     {
@@ -175,10 +183,10 @@ const DRAKA = {
       street: "3323 Bunker Hill Road",
       unit: "Unit 2",
       role: "Owned",
-      summary: "Unit 2 at 3323 Bunker Hill Road. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 2 at 3323 Bunker Hill Road in Mount Rainier.",
       story: [
         "Unit 2 is a residence at 3323 Bunker Hill Road in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "Prince George’s delivery records list Unit 1 and Unit 2 at this address.",
       ]
     },
     {
@@ -198,9 +206,9 @@ const DRAKA = {
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 3.",
       summary: "Studio at 3401 Bunker Hill Road. Rent is $1,000 a month.",
       story: [
-        "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, Maryland. Rent is $1,000 a month.",
-        "The listing says it is available now. Laundry is not on site. Off-street parking is listed, and smoking is not permitted.",
-        "The photograph is the exterior of the building. The bathroom count, the square footage, utility terms, and interior photos are not included.",
+        "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, Maryland. Rent is $1,000 a month, and the listing says it is available now.",
+        "The building is a two-story retail store from 1912, with apartment space above. The assessment record lists about 4,720 square feet of structure on a lot of about 8,720 square feet, zoned LMUTC. That area is the whole building. Laundry is not on site, off-street parking is listed, and smoking is not permitted.",
+        "The photograph is the exterior of the building.",
       ]
     },
     {
@@ -220,9 +228,9 @@ const DRAKA = {
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 8.",
       summary: "One-bedroom at 3401 Bunker Hill Road. Rent is $1,200 a month.",
       story: [
-        "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, Maryland. Rent is $1,200 a month.",
-        "The listing says it is available now. Laundry is not on site. Off-street parking is listed, and smoking is not permitted.",
-        "The photograph is the exterior of the building. The bathroom count, the square footage, utility terms, and interior photos are not included.",
+        "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, Maryland. Rent is $1,200 a month, and the listing says it is available now.",
+        "The building is a two-story retail store from 1912, with apartment space above. The assessment record lists about 4,720 square feet of structure on a lot of about 8,720 square feet, zoned LMUTC. That area is the whole building. Laundry is not on site, off-street parking is listed, and smoking is not permitted.",
+        "The photograph is the exterior of the building.",
       ]
     },
     {
@@ -235,10 +243,10 @@ const DRAKA = {
       street: "3401 Bunker Hill Road",
       unit: "Unit 101",
       role: "Owned",
-      summary: "Unit 101 at 3401 Bunker Hill Road. Rent and layout are not confirmed.",
+      summary: "Residence at 3401 Bunker Hill Road.",
       story: [
         "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted. The rent and layout posted for Units 3 and 8 do not apply here.",
+        "The building is a two-story retail store from 1912, with apartment space above. The assessment record lists about 4,720 square feet of structure on a lot of about 8,720 square feet, zoned LMUTC. That area is the whole building. The studio terms for Unit 3 and the one-bedroom terms for Unit 8 belong to those units.",
       ]
     },
     {
@@ -250,10 +258,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3817 34th Street",
       role: "Owned",
-      summary: "3817 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Two-story retail building from 1915, with apartment space above.",
       story: [
-        "3817 34th Street in Mount Rainier, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "3817 34th Street is a two-story retail building in Mount Rainier, Maryland, built in 1915, with apartment space above.",
+        "The assessment record lists about 2,737 square feet of structure on a lot of about 1,725 square feet, zoned LMUTC. Apt 1 and Storefront A are separate listings at this address. The square footage is the whole building.",
       ]
     },
     {
@@ -266,10 +274,10 @@ const DRAKA = {
       street: "3817 34th Street",
       unit: "Apt 1",
       role: "Owned",
-      summary: "Apt 1 at 3817 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1915 building at 3817 34th Street.",
       story: [
         "Apt 1 is a residence at 3817 34th Street in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The building is a two-story retail store from 1915, with apartment space above. The assessment record lists about 2,737 square feet on a lot of about 1,725 square feet, zoned LMUTC. That area is the building.",
       ]
     },
     {
@@ -282,10 +290,10 @@ const DRAKA = {
       street: "3817 34th Street",
       unit: "Storefront A",
       role: "Owned",
-      summary: "Storefront A at 3817 34th Street. Rent and photos are not confirmed.",
+      summary: "Retail space in the 1915 building at 3817 34th Street.",
       story: [
         "Storefront A is a retail space at 3817 34th Street in Mount Rainier, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this space are not posted.",
+        "The building is a two-story retail store from 1915, with apartment space above, about 2,737 square feet on a lot of about 1,725 square feet, zoned LMUTC. That area is the whole building.",
       ]
     },
     {
@@ -297,10 +305,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3830 34th Street",
       role: "Owned",
-      summary: "3830 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Two-story retail building from 1910, with apartment space above.",
       story: [
-        "3830 34th Street in Mount Rainier, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "3830 34th Street in Mount Rainier, Maryland is offered as a residence. The assessment record describes a two-story retail store from 1910, with apartment space above.",
+        "The record lists about 2,737 square feet of structure on a lot of about 6,000 square feet, zoned LMUTC. That area is the whole building.",
       ]
     },
     {
@@ -313,10 +321,10 @@ const DRAKA = {
       street: "3837 34th Street",
       unit: "Unit 2",
       role: "Owned",
-      summary: "Unit 2 at 3837 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1905 house at 3837 34th Street.",
       story: [
         "Unit 2 is a residence at 3837 34th Street in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The assessment record describes a frame house from 1905, two and a half stories, with no basement recorded, about 1,872 square feet, on a lot of about 6,200 square feet. The land is classified commercial and residential and is zoned LMUTC. The house is recorded as one dwelling, and the square footage is the property.",
       ]
     },
     {
@@ -329,10 +337,10 @@ const DRAKA = {
       street: "3837 34th Street",
       unit: "Unit 3",
       role: "Owned",
-      summary: "Unit 3 at 3837 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1905 house at 3837 34th Street.",
       story: [
         "Unit 3 is a residence at 3837 34th Street in Mount Rainier, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The assessment record describes a frame house from 1905, two and a half stories, with no basement recorded, about 1,872 square feet, on a lot of about 6,200 square feet. The land is classified commercial and residential and is zoned LMUTC. The house is recorded as one dwelling, and the square footage is the property.",
       ]
     },
     {
@@ -344,10 +352,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3840 34th Street",
       role: "Owned",
-      summary: "3840 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Two-story retail building from 1920, with apartment space above.",
       story: [
-        "3840 34th Street in Mount Rainier, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "3840 34th Street is a two-story retail building in Mount Rainier, Maryland, built in 1920, with apartment space above.",
+        "The assessment record lists about 9,760 square feet of structure on a lot of about 5,480 square feet, zoned LMUTC.",
       ]
     },
     {
@@ -359,10 +367,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3850 34th Street",
       role: "Owned",
-      summary: "3850 34th Street. Rent, size, and photos are not confirmed.",
+      summary: "Commercial listing at 3850 34th Street in Mount Rainier.",
       story: [
-        "The commercial space at 3850 34th Street in Mount Rainier, Maryland is listed here.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this space are not posted.",
+        "3850 34th Street in Mount Rainier, Maryland is offered as a commercial space.",
+        "Prince George’s delivery records list 3850 34th Street as its own address in the 20712 ZIP code.",
       ]
     },
     {
@@ -374,10 +382,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3850 34th Street",
       role: "Owned",
-      summary: "3850 34th Street. Rent, layout, and photos are not confirmed.",
+      summary: "Residence at 3850 34th Street in Mount Rainier.",
       story: [
-        "3850 34th Street in Mount Rainier, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "3850 34th Street in Mount Rainier, Maryland is offered as a residence.",
+        "Prince George’s delivery records list 3850 34th Street as its own address in the 20712 ZIP code.",
       ]
     },
     {
@@ -389,10 +397,10 @@ const DRAKA = {
       neighborhood: "Hyattsville",
       street: "4312 Hamilton Street",
       role: "Owned",
-      summary: "4312 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Two-story office building from 1909, converted from a dwelling.",
       story: [
-        "4312 Hamilton Street in Hyattsville, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "4312 Hamilton Street in Hyattsville, Maryland is offered for lease.",
+        "The assessment record describes a two-story office building converted from a dwelling, built in 1909, with about 1,768 square feet of structure on a lot of about 7,393 square feet, zoned NAC.",
       ]
     },
     {
@@ -404,10 +412,10 @@ const DRAKA = {
       neighborhood: "Hyattsville",
       street: "4314 Hamilton Street",
       role: "Owned",
-      summary: "4314 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Two-story office building from 1909, converted from a dwelling.",
       story: [
-        "4314 Hamilton Street in Hyattsville, Maryland is listed as a residence.",
-        "A unit number, rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos are not posted.",
+        "4314 Hamilton Street in Hyattsville, Maryland is offered for lease.",
+        "The assessment record describes a two-story office building converted from a dwelling, built in 1909, with about 1,858 square feet of structure on a lot of about 7,191 square feet, zoned NAC.",
       ]
     },
     {
@@ -420,10 +428,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 8",
       role: "Owned",
-      summary: "Unit 8 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 8 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 8 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -436,10 +444,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 10",
       role: "Owned",
-      summary: "Unit 10 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 10 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 10 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -452,10 +460,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 14/16/17",
       role: "Owned",
-      summary: "Unit 14/16/17 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 14/16/17 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 14/16/17 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -468,10 +476,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 103/105",
       role: "Owned",
-      summary: "Unit 103/105 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 103/105 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 103/105 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -484,10 +492,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 106",
       role: "Owned",
-      summary: "Unit 106 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 106 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 106 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -500,10 +508,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 107",
       role: "Owned",
-      summary: "Unit 107 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 107 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 107 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -516,10 +524,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 108",
       role: "Owned",
-      summary: "Unit 108 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 108 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 108 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -532,10 +540,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 110",
       role: "Owned",
-      summary: "Unit 110 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 110 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 110 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -548,10 +556,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 200",
       role: "Owned",
-      summary: "Unit 200 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 200 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 200 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -564,10 +572,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 203/205",
       role: "Owned",
-      summary: "Unit 203/205 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 203/205 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 203/205 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -580,10 +588,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 206",
       role: "Owned",
-      summary: "Unit 206 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 206 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 206 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -596,10 +604,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 207",
       role: "Owned",
-      summary: "Unit 207 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 207 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 207 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -612,10 +620,10 @@ const DRAKA = {
       street: "4318 Hamilton Street",
       unit: "Unit 210",
       role: "Owned",
-      summary: "Unit 210 at 4318 Hamilton Street. Rent, layout, and photos are not confirmed.",
+      summary: "Unit 210 in the 1930 office building at 4318 Hamilton Street.",
       story: [
         "Unit 210 is a residence at 4318 Hamilton Street in Hyattsville, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "The improved parcel at 4318 Hamilton Street is a three-story office building from 1930, with about 17,506 square feet of structure on a lot of about 9,668 square feet, zoned NAC. A second account at this street number is about 2,848 square feet of land with no building recorded on it. The 17,506 square feet is the office building.",
       ]
     },
     {
@@ -628,10 +636,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Barber booth",
       role: "Owned",
-      summary: "Barber booth at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Barber booth in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
-        "Barber booth is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "The barber booth is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -644,10 +652,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 1",
       role: "Owned",
-      summary: "Booth 1 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 1 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 1 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -660,10 +668,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 2",
       role: "Owned",
-      summary: "Booth 2 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 2 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 2 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -676,10 +684,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 3",
       role: "Owned",
-      summary: "Booth 3 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 3 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 3 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -692,10 +700,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 4",
       role: "Owned",
-      summary: "Booth 4 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 4 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 4 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -708,10 +716,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 5",
       role: "Owned",
-      summary: "Booth 5 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 5 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 5 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -724,10 +732,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 6",
       role: "Owned",
-      summary: "Booth 6 at 7930-7932 Georgia Avenue. Rent and photos are not confirmed.",
+      summary: "Booth 6 in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Booth 6 is a retail booth at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, size, amenities, and a confirmed available date are not posted. Photos of this booth are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -740,10 +748,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Unit 105",
       role: "Owned",
-      summary: "Unit 105 at 7930-7932 Georgia Avenue. Rent, layout, and photos are not confirmed.",
+      summary: "Residence in the 1946 retail building at 7930-7932 Georgia Avenue.",
       story: [
         "Unit 105 is a residence at 7930-7932 Georgia Avenue in Silver Spring, Maryland.",
-        "Rent, bedrooms, bathrooms, size, amenities, and a confirmed available date are not posted. Photos of this unit are not posted.",
+        "Tax records show one building at 7930 Georgia Avenue: a two-story retail store from 1946, about 6,128 square feet, on a lot of about 3,252 square feet, zoned CR30, in Silver Spring 20910. 7932 Georgia Avenue is not a separate tax account. The square footage is the whole building.",
       ]
     },
     {
@@ -755,10 +763,10 @@ const DRAKA = {
       neighborhood: "Temple Hills",
       street: "4719 Stamp Road",
       role: "Owned",
-      summary: "4719 Stamp Road in Temple Hills is an owned residence.",
+      summary: "Owned property at 4719 Stamp Road in Temple Hills.",
       story: [
-        "4719 Stamp Road in Temple Hills, Maryland is an owned residence.",
-        "This page does not list a rent or a sale price.",
+        "4719 Stamp Road in Temple Hills, Maryland is an owned property. It is not offered for rent or for sale.",
+        "The assessment record classifies the property as an industrial warehouse from 1952, about 10,582 square feet, on a lot of about 38,236 square feet, zoned IE. The same record describes a frame structure of one and a half stories with no basement, and it records three building units.",
       ]
     },
     {
@@ -770,10 +778,10 @@ const DRAKA = {
       neighborhood: "Silver Spring",
       street: "950 Sligo Avenue",
       role: "Owned",
-      summary: "950 Sligo Avenue in Silver Spring is for sale.",
+      summary: "One-story retail building from 1952, offered for sale.",
       story: [
         "950 Sligo Avenue in Silver Spring, Maryland is for sale.",
-        "The sale price, bedrooms, bathrooms, size, and photos are not posted.",
+        "The Montgomery assessment record describes a one-story retail store from 1952, about 1,940 square feet, on a lot of about 2,040 square feet, zoned CR30.",
       ]
     }
   ]
