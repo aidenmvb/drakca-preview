@@ -98,7 +98,7 @@
       }
       return;
     }
-    const preview = previewVacancies(catalog().filter(marketed));
+    const preview = previewVacancies(catalog().filter((property) => offersRent(property) && property.available));
     leasePreview.hidden = preview.length === 0;
     leasePreview.innerHTML = preview.map((property) => previewCard(property)).join("");
     if (viewAll) viewAll.hidden = preview.length === 0;
@@ -190,7 +190,7 @@
   };
 
   function marketed(property) {
-    return Boolean(property.available) || property.intent === "sale";
+    return Boolean(property.available) || property.intent === "sale" || property.intent === "both";
   }
 
   function asksForDetails(property) {
@@ -216,7 +216,7 @@
     const photo = property.image
       ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"></figure>'
       : offered
-        ? '<figure class="card-photo-empty"><p class="listing-photo-note">Photos of this unit are not posted yet</p></figure>'
+        ? '<figure class="card-photo-empty"><p class="listing-photo-note">Photos coming soon</p></figure>'
         : "";
     return (
       '<a class="card" href="' + esc(propertyHref(property)) + '">' +
@@ -491,7 +491,7 @@
       }
       if (clear) clear.hidden = !search;
       book.innerHTML =
-        bookGroup("available", "Available properties", "Listings with a confirmed rent, sale, or move-in date.", available) +
+        bookGroup("available", "Available properties", "Listings the office is offering for lease or for sale.", available) +
         bookGroup("portfolio", "Our portfolio", "Other properties we own or manage. A listing here is not a current offer unless its page says so.", portfolio);
       book.hidden = list.length === 0;
       if ((location.hash === "#available" || location.hash === "#portfolio") && !render.scrolled) {
@@ -576,6 +576,9 @@
     ).join("");
     const applyHref = property.applyHref || ("contact.html?property=" + encodeURIComponent(property.name) + "&topic=apply");
     const tourHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=tour";
+    const leaseOffer = marketed(property) && offersRent(property);
+    const saleOnly = marketed(property) && property.intent === "sale";
+    const inquireHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=" + (saleOnly ? "sale" : "inquiry");
     const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
     const chips = [];
     if (marketed(property)) {
@@ -605,7 +608,7 @@
             (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
         "</figure>"
       : '<figure class="listing-photo listing-photo-empty">' +
-          '<p class="listing-photo-note">Photos of this unit are not posted yet</p>' +
+          '<p class="listing-photo-note">Photos coming soon</p>' +
         "</figure>";
     root.innerHTML =
       '<article class="listing" id="page">' +
@@ -625,11 +628,20 @@
             "</div>" +
             '<aside class="listing-card">' +
               '<p class="kicker">Contact</p>' +
-              "<h2>See this property</h2>" +
-              "<p>Contact us for pricing, availability, or to arrange a viewing.</p>" +
+              "<h2>" + (leaseOffer ? "See this property" : "Inquire about this property") + "</h2>" +
+              "<p>" + (leaseOffer
+                ? "Contact us for pricing, availability, or to arrange a viewing."
+                : saleOnly
+                  ? "Contact us about the sale or to arrange a viewing."
+                  : "Ask the office about this property.") + "</p>" +
               '<div class="listing-actions">' +
-                '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
-                '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>' +
+                (leaseOffer
+                  ? '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
+                    '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>'
+                  : saleOnly
+                    ? '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire about this property</a>' +
+                      '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>'
+                    : '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire about this property</a>') +
                 (contact.phoneHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.phoneHref) + '">' + esc(contact.phone) + "</a>" : "") +
                 (contact.emailHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.emailHref) + '">' + esc(contact.email) + "</a>" : "") +
               "</div>" +
@@ -649,6 +661,8 @@
       const topicFits = !slot || slot === topic || (slot === "maintenance" && topic === "resident");
       if (topic && form.elements.who && topicFits) {
         if (topic === "apply") form.elements.who.value = "Applying for a property";
+        if (topic === "inquiry") form.elements.who.value = "Something else";
+        if (topic === "sale") form.elements.who.value = "Buying or selling";
         if (topic === "availability") form.elements.who.value = "Looking for a home or a shop";
         if (topic === "owner") form.elements.who.value = "An owner";
         if (topic === "resident" && slot !== "maintenance") form.elements.who.value = "A resident";

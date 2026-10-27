@@ -47,9 +47,10 @@ const DRAKA = {
       street: "11212 Grandview Avenue",
       unit: "Unit 103",
       role: "Owned",
-      summary: "Residence at 11212 Grandview Avenue in Wheaton.",
+      summary: "Residence at 11212 Grandview Avenue in downtown Wheaton.",
       story: [
-        "Unit 103 is a residence at 11212 Grandview Avenue in Wheaton."
+        "Unit 103 is a residence at 11212 Grandview Avenue in Wheaton. Unit 107 is a separate residence in the same building.",
+        "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
       ]
     },
     {
@@ -62,9 +63,10 @@ const DRAKA = {
       street: "11212 Grandview Avenue",
       unit: "Unit 107",
       role: "Owned",
-      summary: "Residence at 11212 Grandview Avenue in Wheaton.",
+      summary: "Residence at 11212 Grandview Avenue in downtown Wheaton.",
       story: [
-        "Unit 107 is a residence at 11212 Grandview Avenue in Wheaton."
+        "Unit 107 is a residence at 11212 Grandview Avenue in Wheaton. Unit 103 is a separate residence in the same building.",
+        "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
       ]
     },
     {
@@ -140,9 +142,10 @@ const DRAKA = {
       street: "1728-1730 Connecticut Avenue Northwest",
       unit: "Lower Level",
       role: "Owned",
-      summary: "Commercial lower level on Connecticut Avenue, for lease and for sale.",
+      summary: "Commercial lower level in Dupont Circle, for lease and for sale.",
       story: [
-        "The lower level at 1728-1730 Connecticut Avenue Northwest is commercial space in Washington, D.C., offered for lease and for sale."
+        "The lower level at 1728-1730 Connecticut Avenue Northwest is commercial space, offered for lease and for sale. Unit 4A, a residence in the same building, is listed separately.",
+        "The building is on Connecticut Avenue in the Dupont Circle neighborhood."
       ]
     },
     {
@@ -154,9 +157,10 @@ const DRAKA = {
       street: "1728-1730 Connecticut Avenue Northwest",
       unit: "Unit 4A",
       role: "Owned",
-      summary: "Residence on Connecticut Avenue, for lease and for sale.",
+      summary: "Residence in Dupont Circle, for lease and for sale.",
       story: [
-        "Unit 4A is a residence at 1728-1730 Connecticut Avenue Northwest in Washington, D.C., offered for lease and for sale."
+        "Unit 4A is a residence at 1728-1730 Connecticut Avenue Northwest, offered for lease and for sale. The commercial lower level in the same building is listed separately.",
+        "The building is on Connecticut Avenue in the Dupont Circle neighborhood."
       ]
     },
     {
@@ -168,9 +172,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3323 Bunker Hill Road",
       role: "Owned",
-      summary: "Home at 3323 Bunker Hill Road in Mount Rainier.",
+      summary: "Home in Mount Rainier, with Unit 1 and Unit 2 listed separately.",
       story: [
-        "3323 Bunker Hill Road is a home in Mount Rainier. Unit 1 and Unit 2 are listed separately."
+        "3323 Bunker Hill Road is a home in Mount Rainier. It has two residences, Unit 1 and Unit 2, and each has its own page.",
+        "The house is on Bunker Hill Road in Mount Rainier."
       ]
     },
     {
@@ -185,7 +190,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 1 at 3323 Bunker Hill Road in Mount Rainier.",
       story: [
-        "Unit 1 is a residence at 3323 Bunker Hill Road in Mount Rainier."
+        "Unit 1 is one of two residences at 3323 Bunker Hill Road in Mount Rainier. Unit 2 is listed separately.",
+        "The house is on Bunker Hill Road in Mount Rainier."
       ]
     },
     {
@@ -200,7 +206,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 2 at 3323 Bunker Hill Road in Mount Rainier.",
       story: [
-        "Unit 2 is a residence at 3323 Bunker Hill Road in Mount Rainier."
+        "Unit 2 is one of two residences at 3323 Bunker Hill Road in Mount Rainier. Unit 1 is listed separately.",
+        "The house is on Bunker Hill Road in Mount Rainier."
       ]
     },
     {
@@ -258,9 +265,10 @@ const DRAKA = {
       street: "3401 Bunker Hill Road",
       unit: "Unit 101",
       role: "Owned",
-      summary: "Residence at 3401 Bunker Hill Road in Mount Rainier.",
+      summary: "Residence at 3401 Bunker Hill Road in the Gateway Arts District.",
       story: [
-        "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier, in the Gateway Arts District."
+        "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier. Units 3 and 8 in the same building are listed separately, with their own rents and terms.",
+        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium."
       ]
     },
     {
@@ -314,9 +322,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3817 34th Street",
       role: "Owned",
-      summary: "Home at 3817 34th Street in Mount Rainier.",
+      summary: "Home on 34th Street in Mount Rainier, with a residence and a storefront.",
       story: [
-        "3817 34th Street is a home in Mount Rainier. Apt 1 and Storefront A are listed separately."
+        "3817 34th Street is a property in Mount Rainier. Apt 1 is the residence, and Storefront A is the retail space. Each is listed on its own page.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -329,9 +338,10 @@ const DRAKA = {
       street: "3817 34th Street",
       unit: "Apt 1",
       role: "Owned",
-      summary: "Apartment at 3817 34th Street in Mount Rainier.",
+      summary: "Residence at 3817 34th Street in Mount Rainier’s Gateway Arts District.",
       story: [
-        "Apt 1 is a residence at 3817 34th Street in Mount Rainier."
+        "Apt 1 is the residence at 3817 34th Street in Mount Rainier. Storefront A, the retail space in the same property, is listed separately.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -344,9 +354,10 @@ const DRAKA = {
       street: "3817 34th Street",
       unit: "Storefront A",
       role: "Owned",
-      summary: "Retail space at 3817 34th Street in Mount Rainier.",
+      summary: "Retail space at 3817 34th Street in Mount Rainier’s Gateway Arts District.",
       story: [
-        "Storefront A is retail space at 3817 34th Street in Mount Rainier."
+        "Storefront A is the retail space at 3817 34th Street in Mount Rainier. Apt 1, the residence in the same property, is listed separately.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -358,9 +369,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3830 34th Street",
       role: "Owned",
-      summary: "Home at 3830 34th Street in Mount Rainier.",
+      summary: "Home at 3830 34th Street in Mount Rainier’s Gateway Arts District.",
       story: [
-        "3830 34th Street is a home in Mount Rainier."
+        "3830 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -375,7 +387,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Residence at 3837 34th Street in Mount Rainier.",
       story: [
-        "Unit 2 is a residence at 3837 34th Street in Mount Rainier."
+        "Unit 2 is a residence at 3837 34th Street in Mount Rainier. Unit 3 is a separate residence in the same building.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -390,7 +403,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Residence at 3837 34th Street in Mount Rainier.",
       story: [
-        "Unit 3 is a residence at 3837 34th Street in Mount Rainier."
+        "Unit 3 is a residence at 3837 34th Street in Mount Rainier. Unit 2 is a separate residence in the same building.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -402,9 +416,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3840 34th Street",
       role: "Owned",
-      summary: "Home at 3840 34th Street in Mount Rainier.",
+      summary: "Home at 3840 34th Street in Mount Rainier’s Gateway Arts District.",
       story: [
-        "3840 34th Street is a home in Mount Rainier."
+        "3840 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -418,7 +433,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Commercial space at 3850 34th Street in Mount Rainier.",
       story: [
-        "3850 34th Street in Mount Rainier is offered as commercial space."
+        "3850 34th Street has a commercial space and a home. This page is the commercial space. The home is listed separately.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -430,9 +446,10 @@ const DRAKA = {
       neighborhood: "Mount Rainier",
       street: "3850 34th Street",
       role: "Owned",
-      summary: "Home at 3850 34th Street in Mount Rainier.",
+      summary: "Home at 3850 34th Street in Mount Rainier’s Gateway Arts District.",
       story: [
-        "3850 34th Street is a home in Mount Rainier."
+        "3850 34th Street is a home in Mount Rainier. The commercial space at the same address is listed separately.",
+        "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
     {
@@ -446,7 +463,7 @@ const DRAKA = {
       role: "Owned",
       summary: "Home at 4312 Hamilton Street in Hyattsville.",
       story: [
-        "4312 Hamilton Street is a home in Hyattsville, offered for lease."
+        "4312 Hamilton Street is a home in Hyattsville. It is listed separately from 4314 Hamilton Street and from the residences at 4318 Hamilton Street."
       ]
     },
     {
@@ -460,7 +477,7 @@ const DRAKA = {
       role: "Owned",
       summary: "Home at 4314 Hamilton Street in Hyattsville.",
       story: [
-        "4314 Hamilton Street is a home in Hyattsville, offered for lease."
+        "4314 Hamilton Street is a home in Hyattsville. It is listed separately from 4312 Hamilton Street and from the residences at 4318 Hamilton Street."
       ]
     },
     {
@@ -475,7 +492,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 8 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 8 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 8 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -490,7 +508,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 10 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 10 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 10 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -505,7 +524,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 14/16/17 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 14/16/17 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 14/16/17 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -520,7 +540,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 103/105 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 103/105 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 103/105 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -535,7 +556,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 106 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 106 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 106 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -550,7 +572,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 107 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 107 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 107 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -565,7 +588,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 108 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 108 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 108 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -580,7 +604,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 110 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 110 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 110 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -595,7 +620,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 200 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 200 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 200 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -610,7 +636,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 203/205 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 203/205 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 203/205 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -625,7 +652,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 206 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 206 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 206 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -640,7 +668,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 207 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 207 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 207 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -655,7 +684,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 210 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 210 is a residence at 4318 Hamilton Street in Hyattsville."
+        "Unit 210 is a residence at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
       ]
     },
     {
@@ -668,9 +698,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Barber booth",
       role: "Owned",
-      summary: "Barber booth on Georgia Avenue in Silver Spring.",
+      summary: "Barber booth at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "This barber booth is a workspace for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "This barber booth is a workspace at 7930-7932 Georgia Avenue in Silver Spring. Booths 1 through 6, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -683,9 +714,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 1",
       role: "Owned",
-      summary: "Booth 1 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 1 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 1 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 1 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -698,9 +730,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 2",
       role: "Owned",
-      summary: "Booth 2 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 2 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 2 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 2 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -713,9 +746,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 3",
       role: "Owned",
-      summary: "Booth 3 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 3 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 3 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 3 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -728,9 +762,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 4",
       role: "Owned",
-      summary: "Booth 4 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 4 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 4 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 4 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -743,9 +778,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 5",
       role: "Owned",
-      summary: "Booth 5 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 5 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 5 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 5 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -758,9 +794,10 @@ const DRAKA = {
       street: "7930-7932 Georgia Avenue",
       unit: "Booth 6",
       role: "Owned",
-      summary: "Booth 6 on Georgia Avenue in Silver Spring.",
+      summary: "Booth 6 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Booth 6 is a barber booth for rent at 7930-7932 Georgia Avenue in Silver Spring."
+        "Booth 6 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
       ]
     },
     {
@@ -775,7 +812,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Residence at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Unit 105 is a residence at 7930-7932 Georgia Avenue in Silver Spring."
+        "Unit 105 is a residence at 7930-7932 Georgia Avenue in Silver Spring. The barber booths at this address are separate listings.",
+        "The residence is in the same building as the booths. It is not a booth."
       ]
     },
     {
@@ -787,9 +825,9 @@ const DRAKA = {
       neighborhood: "Temple Hills",
       street: "4719 Stamp Road",
       role: "Owned",
-      summary: "Owned home at 4719 Stamp Road in Temple Hills.",
+      summary: "Portfolio property in Temple Hills. Not offered for rent or for sale.",
       story: [
-        "4719 Stamp Road in Temple Hills is part of the portfolio. It is not offered for rent or for sale."
+        "4719 Stamp Road in Temple Hills is part of the portfolio. The office is not offering it for rent or for sale."
       ]
     },
     {
@@ -801,9 +839,10 @@ const DRAKA = {
       neighborhood: "Silver Spring",
       street: "950 Sligo Avenue",
       role: "Owned",
-      summary: "950 Sligo Avenue in Silver Spring, for sale.",
+      summary: "950 Sligo Avenue in downtown Silver Spring, for sale.",
       story: [
-        "950 Sligo Avenue in Silver Spring is for sale."
+        "950 Sligo Avenue is in downtown Silver Spring and is offered for sale.",
+        "The price is not posted. Ask the office for the price and for a viewing."
       ]
     }
   ]

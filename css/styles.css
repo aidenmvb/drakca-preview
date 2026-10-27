@@ -757,10 +757,18 @@ a.market:hover h3 { text-decoration: underline; text-underline-offset: 0.14em; }
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 3 / 2;
-  background: var(--navy);
+  aspect-ratio: auto;
+  min-height: 0;
+  padding: 0.85rem 1rem 0.8rem;
+  background: transparent;
+  border-bottom: 1px solid var(--line);
 }
-.card-photo-empty .listing-photo-note { font-size: 1.05rem; padding: 0 1.2rem; }
+.card-photo-empty .listing-photo-note {
+  max-width: none;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
 .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; transition: transform .45s ease; }
 .card:hover img { transform: scale(1.035); }
 .card-body { padding: 1.05rem 1.15rem 1.15rem; }
@@ -929,12 +937,18 @@ body[data-page="property"] .nav-panel a[aria-current="page"] { border-bottom-col
   background: var(--navy);
 }
 .listing-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
-.listing-photo-empty {
+.listing-photo.listing-photo-empty {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--navy);
+  height: auto;
+  min-height: 0;
+  padding: 1.05rem 1.2rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 16px;
 }
+.listing-photo-empty .listing-photo-note { color: var(--muted); font-size: 1.05rem; }
 .listing-photo-note {
   position: static;
   margin: 0;
