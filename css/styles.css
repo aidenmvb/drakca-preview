@@ -722,6 +722,10 @@ a.market { text-decoration: none; color: inherit; }
 a.market .btn-text, a.market .btn-glass { margin-top: auto; align-self: flex-start; }
 a.market:hover h3 { text-decoration: underline; text-underline-offset: 0.14em; }
 
+.book-groups { display: flex; flex-direction: column; gap: 3.4rem; }
+.book-group .section-head { margin-bottom: 1.35rem; }
+.book-group .section-head h2 { margin: 0; font-size: clamp(2.1rem, 4vw, 3rem); }
+.book-group .lede { margin: 0.55rem 0 0; }
 .book, .featured {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -749,6 +753,14 @@ a.market:hover h3 { text-decoration: underline; text-underline-offset: 0.14em; }
     0 16px 30px rgba(20,32,40,.1);
 }
 .card figure { margin: 0; overflow: hidden; background: #e7e2da; }
+.card figure.card-photo-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  background: var(--navy);
+}
+.card-photo-empty .listing-photo-note { font-size: 1.05rem; padding: 0 1.2rem; }
 .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; transition: transform .45s ease; }
 .card:hover img { transform: scale(1.035); }
 .card-body { padding: 1.05rem 1.15rem 1.15rem; }
@@ -1127,6 +1139,7 @@ input[aria-invalid="true"], textarea[aria-invalid="true"] { border-color: #8d3b3
   .listing-photo { height: 18rem; border-radius: 16px; }
 }
 @media (max-width: 640px) {
+  .book-groups { gap: 2.4rem; }
   .book, .featured { grid-template-columns: 1fr; }
   .page-hero { height: 100svh; max-height: 100svh; }
   .page-hero.page-hero-plain { height: auto; max-height: none; }

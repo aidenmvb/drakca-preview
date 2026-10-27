@@ -98,7 +98,7 @@
       }
       return;
     }
-    const preview = previewVacancies(catalog());
+    const preview = previewVacancies(catalog().filter(marketed));
     leasePreview.hidden = preview.length === 0;
     leasePreview.innerHTML = preview.map((property) => previewCard(property)).join("");
     if (viewAll) viewAll.hidden = preview.length === 0;
@@ -179,24 +179,69 @@
     return letter ? letter[0].toUpperCase() : "·";
   }
 
+  const finishedCopy = {
+    "lansdowne-1607": true,
+    "1530-key-boulevard-atrium-104": true,
+    "1530-key-boulevard-unit-608": true,
+    "3401-bunker-hill-road-unit-3": true,
+    "3401-bunker-hill-road-unit-8": true,
+    "3403-bunker-hill-road-live-work": true,
+    "3403-bunker-hill-road": true,
+  };
+
+  function marketed(property) {
+    return Boolean(property.available) || property.intent === "sale";
+  }
+
+  function asksForDetails(property) {
+    return property.unitUnspecified === true || !finishedCopy[property.id];
+  }
+
+  function cardKicker(property) {
+    const parts = [];
+    if (marketed(property)) parts.push(offeringLabel(property));
+    else if (property.intent === "both") parts.push("For lease and for sale");
+    else if (property.role) parts.push(property.role);
+    if (property.role && marketed(property) && property.intent !== "owned" && property.role !== parts[0]) parts.push(property.role);
+    if (property.type) parts.push(property.type);
+    return parts.filter(Boolean).join(" · ");
+  }
+
   function leaseCard(property) {
     const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
-    const note = [property.price, property.available ? "Available " + property.available : ""].filter(Boolean).join(" · ");
-    const kind = offeringLabel(property);
+    const offered = marketed(property);
+    const note = offered
+      ? [property.price, property.available ? "Available " + property.available : ""].filter(Boolean).join(" · ")
+      : "";
     const photo = property.image
       ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"></figure>'
-      : "";
+      : offered
+        ? '<figure class="card-photo-empty"><p class="listing-photo-note">Photos of this unit are not posted yet</p></figure>'
+        : "";
     return (
       '<a class="card" href="' + esc(propertyHref(property)) + '">' +
         photo +
         '<div class="card-body">' +
-          '<p class="kicker">' + esc(kind) + (property.role && property.intent !== "owned" ? " · " + esc(property.role) : "") + (property.type ? " · " + esc(property.type) : "") + "</p>" +
+          '<p class="kicker">' + esc(cardKicker(property)) + "</p>" +
           "<h3>" + esc(property.name) + "</h3>" +
           (property.summary ? '<p class="meta">' + esc(property.summary) + "</p>" : "") +
           (place ? '<p class="meta">' + esc(place) + "</p>" : "") +
           (note ? '<p class="open-note">' + esc(note) + "</p>" : "") +
         "</div>" +
       "</a>"
+    );
+  }
+
+  function bookGroup(id, title, lede, items) {
+    if (!items.length) return "";
+    return (
+      '<section class="book-group" id="' + id + '" aria-labelledby="' + id + '-title">' +
+        '<div class="section-head">' +
+          '<h2 id="' + id + '-title">' + esc(title) + "</h2>" +
+          '<p class="lede">' + esc(lede) + "</p>" +
+        "</div>" +
+        '<div class="book">' + items.map(leaseCard).join("") + "</div>" +
+      "</section>"
     );
   }
 
@@ -428,21 +473,31 @@
         }
         return true;
       });
+      const available = list.filter(marketed);
+      const portfolio = list.filter((property) => !marketed(property));
       const search = describe();
       const clear = document.getElementById("clear-filters");
       if (count) {
-        const noun = list.length === 1 ? " property" : " properties";
         if (catalog().length) {
+          const tally = state.open
+            ? available.length + (available.length === 1 ? " available property" : " available properties")
+            : available.length + " available · " + portfolio.length + " in the portfolio";
           count.hidden = false;
-          count.textContent = list.length + noun + (search ? " · " + search : "");
+          count.textContent = tally + (search ? " · " + search : "");
         } else {
           count.hidden = !search;
           count.textContent = search ? "Filtered to " + search + "." : "";
         }
       }
       if (clear) clear.hidden = !search;
-      book.innerHTML = list.map(leaseCard).join("");
+      book.innerHTML =
+        bookGroup("available", "Available properties", "Listings with a confirmed rent, sale, or move-in date.", available) +
+        bookGroup("portfolio", "Our portfolio", "Other properties we own or manage. A listing here is not a current offer unless its page says so.", portfolio);
       book.hidden = list.length === 0;
+      if ((location.hash === "#available" || location.hash === "#portfolio") && !render.scrolled) {
+        render.scrolled = true;
+        document.querySelector(location.hash)?.scrollIntoView();
+      }
       if (empty) {
         empty.hidden = list.length !== 0;
         if (emptyCopy) {
@@ -522,8 +577,19 @@
     const applyHref = property.applyHref || ("contact.html?property=" + encodeURIComponent(property.name) + "&topic=apply");
     const tourHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=tour";
     const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
-    const kind = offeringLabel(property);
-    const chips = [kind, property.role && property.role !== kind ? property.role : "", property.type, property.available ? "Available " + property.available : ""].filter(Boolean);
+    const chips = [];
+    if (marketed(property)) {
+      const kind = offeringLabel(property);
+      chips.push(kind);
+      if (property.role && property.role !== kind && property.intent !== "owned") chips.push(property.role);
+      if (property.available) chips.push("Available " + property.available);
+    } else if (property.intent === "both") {
+      chips.push("For lease and for sale");
+      if (property.role) chips.push(property.role);
+    } else if (property.role) {
+      chips.push(property.role);
+    }
+    if (property.type) chips.push(property.type);
     const factItems = [
       ["Bedrooms", property.beds],
       ["Baths", property.baths],
@@ -551,7 +617,7 @@
               (property.price ? '<p class="listing-price">' + esc(property.price) + "</p>" : "") +
               "<h1>" + esc(property.name) + "</h1>" +
               (place ? '<p class="listing-place">' + esc(place) + "</p>" : "") +
-              (property.unitUnspecified ? '<p class="listing-place">Contact us for further details.</p>' : "") +
+              (asksForDetails(property) ? '<p class="listing-place">Contact us for further details.</p>' : "") +
               '<p class="listing-meta">' + chips.map((chip) => "<span>" + esc(chip) + "</span>").join("") + "</p>" +
               facts +
               '<div class="story">' + story.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>" +
