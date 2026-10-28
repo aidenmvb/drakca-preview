@@ -8,11 +8,11 @@ No form host is connected. `DRAKA.forms.accessKey` and `DRAKA.forms.endpoint` in
 
 Web3Forms is the host these pages already speak to. The free plan does not require a card. The access key is a public alias for the office inbox, not a password. Web3Forms says it is safe to put that key in the website.
 
-1. Open https://web3forms.com and enter `drakaLLC@gmail.com` as the recipient.
-2. Open the message Web3Forms sends to that inbox and copy the access key.
-3. Paste the key into `forms.accessKey` in `js/data.js`. Leave `endpoint` empty.
-4. In the Web3Forms dashboard, turn on the honeypot. Restrict the form to `aidenmvb.github.io` while this is the preview, and add `drakallc.com` only when that site is published.
-5. Publish the website again. The form hint changes to a confirmation line, and a submission is delivered only after Web3Forms accepts it.
+1. Open https://web3forms.com and enter `drakcaom@gmail.com` as the recipient. An access key created for an earlier inbox still delivers to that inbox. Changing the address on the website does not move it.
+2. Open the message Web3Forms sends to `drakcaom@gmail.com` and copy only the access key.
+3. Save that key in `~/.config/draka/web3forms-access-key`. Do not paste it into chat. Leave `forms.endpoint` empty. The site copies the key into `forms.accessKey` when the preview is published.
+4. The forms already include a honeypot. Web3Forms domain restriction is a paid option, so it is not part of this free setup.
+5. Publish the preview again. The form hint changes to a confirmation line, and a submission is delivered only after Web3Forms accepts it.
 
 Web3Forms checks the submission on its server, including spam filtering. This site also checks the name, email, and message before sending, ignores a filled honeypot, blocks a second click while a request is in flight, and will not send the same message again after one has been accepted.
 

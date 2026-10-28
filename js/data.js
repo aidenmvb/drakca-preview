@@ -7,8 +7,8 @@ const DRAKA = {
   contact: {
     phone: "202-413-9222",
     phoneHref: "tel:+12024139222",
-    email: "drakaLLC@gmail.com",
-    emailHref: "mailto:drakaLLC@gmail.com",
+    email: "drakcaom@gmail.com",
+    emailHref: "mailto:drakcaom@gmail.com",
   },
   forms: {
     provider: "web3forms",
