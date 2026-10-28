@@ -38,7 +38,14 @@
       menuButton.textContent = open ? "Close" : "Menu";
       document.body.classList.toggle("nav-open", open);
     };
-    menuButton.addEventListener("click", () => setOpen(menuButton.getAttribute("aria-expanded") !== "true"));
+    menuButton.addEventListener("click", () => {
+      const open = menuButton.getAttribute("aria-expanded") !== "true";
+      setOpen(open);
+      if (open) {
+        const first = panel.querySelector("a");
+        if (first) first.focus();
+      }
+    });
     panel.addEventListener("click", (event) => {
       if (event.target.closest("a")) setOpen(false);
     });
@@ -603,10 +610,10 @@
     setMeta('meta[name="twitter:description"]', description);
     const canonical = document.querySelector('link[rel="canonical"]');
     const propertyPath = "property.html?id=" + encodeURIComponent(property.id);
-    if (canonical) canonical.setAttribute("href", propertyPath);
     const shareHost = location.hostname === "drakallc.com" || location.hostname === "www.drakallc.com"
       ? "https://drakallc.com/"
       : (location.hostname === "aidenmvb.github.io" ? "https://aidenmvb.github.io/drakca-preview/" : "");
+    if (canonical) canonical.setAttribute("href", shareHost ? shareHost + propertyPath : propertyPath);
     if (shareHost) {
       setMeta('meta[property="og:url"]', shareHost + propertyPath);
       if (property.image) {
@@ -640,14 +647,14 @@
     const gallery = (property.gallery || []).map((image) =>
       '<img src="' + esc(image.src) + '" alt="' + esc(image.alt) + '" loading="lazy">'
     ).join("");
-    const applyHref = property.applyHref || ("contact.html?property=" + encodeURIComponent(property.name) + "&topic=apply");
+    const applyHref = property.applyHref || inquiryLink(property, "apply");
     const applyLabel = !property.applyHref || String(property.applyHref).indexOf("contact.html") === 0
       ? "Request application details"
       : "Apply";
-    const tourHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=tour";
     const leaseOffer = marketed(property) && offersRent(property);
     const saleOnly = marketed(property) && property.intent === "sale";
-    const inquireHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=" + (saleOnly ? "sale" : "inquiry");
+    const tourHref = inquiryLink(property, "tour");
+    const inquireHref = inquiryLink(property, saleOnly ? "sale" : "inquiry");
     const place = [property.neighborhood, property.state].filter(Boolean).join(", ");
     const chips = [];
     if (marketed(property)) {
@@ -723,13 +730,29 @@
           '<section class="listing-bio" id="bio" aria-label="About this property">' +
             "<h2>About this property</h2>" +
             bioHtml +
+            (bioText === "N/A" ? '<p class="bio-unresolved">Unresolved. This description is not ready for the public site.</p>' : "") +
           "</section>" +
         "</div>" +
       "</article>";
   }
 
+  function inquiryLink(property, topic) {
+    const params = new URLSearchParams();
+    params.set("property", property.name);
+    params.set("id", property.id);
+    if (property.unit) params.set("unit", property.unit);
+    if (topic) params.set("topic", topic);
+    return "contact.html?" + params.toString();
+  }
+
+  function formDeliveryConfigured() {
+    const forms = DRAKA.forms || {};
+    return Boolean(String(forms.accessKey || "").trim() || String(forms.endpoint || "").trim());
+  }
+
   function initForms() {
     const params = new URLSearchParams(location.search);
+    const connectedHint = "You will see confirmation here after the office inbox accepts the message.";
     document.querySelectorAll(".desk-form").forEach((form) => {
       const named = params.get("property") || params.get("building");
       const topic = params.get("topic");
@@ -747,14 +770,37 @@
         if (topic === "estimate") form.elements.who.value = "Requesting an estimate";
         if (topic === "tour") form.elements.who.value = "Scheduling a tour";
       }
+      if (!form.querySelector("[name=botcheck]")) {
+        const trap = document.createElement("div");
+        trap.className = "hp";
+        trap.setAttribute("aria-hidden", "true");
+        trap.innerHTML = '<label>Leave this blank<input name="botcheck" tabindex="-1" autocomplete="off"></label>';
+        form.appendChild(trap);
+      }
+      const hint = form.querySelector(".form-hint");
+      if (hint && formDeliveryConfigured()) hint.textContent = connectedHint;
+      let status = form.querySelector(".form-status");
+      if (!status) {
+        status = document.createElement("p");
+        status.className = "form-status";
+        status.setAttribute("role", "alert");
+        status.hidden = true;
+        form.appendChild(status);
+      }
+      const button = form.querySelector("button[type=submit]");
+      const idleLabel = button ? button.textContent : "";
+      let submissionId = "";
 
       form.addEventListener("submit", (event) => {
         event.preventDefault();
+        if (form.dataset.sending === "1") return;
         form.querySelectorAll(".error").forEach((node) => node.remove());
         form.querySelectorAll("[aria-invalid]").forEach((node) => {
           node.removeAttribute("aria-invalid");
           node.removeAttribute("aria-describedby");
         });
+        status.hidden = true;
+        status.textContent = "";
         const checks = [
           [form.elements.name, form.elements.name.value.trim().length > 1, "Enter your name."],
           [form.elements.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.elements.email.value.trim()), "Enter a valid email address."],
@@ -779,33 +825,118 @@
           form.querySelector("[aria-invalid]").focus();
           return;
         }
+        const honeypot = form.querySelector("[name=botcheck]");
+        if (honeypot && honeypot.value.trim()) {
+          showFormError(status, "This message was not sent.");
+          return;
+        }
+        if (!formDeliveryConfigured()) {
+          showFormError(status, "Inbox delivery is not connected yet. This message was not sent. Call 202-413-9222.");
+          return;
+        }
         const entry = Object.fromEntries(new FormData(form).entries());
-        entry.at = new Date().toISOString();
-        const notes = JSON.parse(localStorage.getItem("dracka.notes") || "[]");
-        notes.push(entry);
-        localStorage.setItem("dracka.notes", JSON.stringify(notes));
-        const lines = [
-          "Name: " + entry.name,
-          "Email: " + entry.email,
-          "Phone: " + (entry.phone || "—"),
-          "How can we help: " + (entry.who || "—"),
-        ];
-        if (entry.place) lines.push("Kind of property: " + entry.place);
-        lines.push("About: " + (entry.subject || "—"), "", entry.message);
-        const mail = new URLSearchParams({
-          subject: "DRAKA — " + (entry.who || "Inquiry") + (entry.subject ? " — " + entry.subject : ""),
-          body: lines.join("\n"),
-        });
-        const success = form.parentElement.querySelector(".form-success");
-        const mailLink = success.querySelector("[data-mailto]");
-        const href = DRAKA.contact.emailHref ? DRAKA.contact.emailHref + "?" + mail.toString() : "";
-        if (mailLink && href) mailLink.href = href;
-        else if (mailLink) mailLink.remove();
-        form.hidden = true;
-        success.hidden = false;
-        success.focus();
-        if (href) window.location.href = href;
+        delete entry.botcheck;
+        const formType = slot || "contact";
+        const propertyName = params.get("property") || entry.subject || "";
+        const unit = params.get("unit") || "";
+        const propertyId = params.get("id") || "";
+        const fingerprint = [formType, propertyId, entry.email, entry.subject || "", entry.message].join("|").toLowerCase();
+        const accepted = acceptedForms();
+        if (accepted.indexOf(fingerprint) !== -1) {
+          showFormError(status, "This message was already accepted. Call 202-413-9222 if you need to add something.");
+          return;
+        }
+        if (!submissionId) submissionId = fingerprint + ":" + Date.now();
+        const forms = DRAKA.forms || {};
+        const payload = {
+          form_type: formType,
+          subject: "DRAKA — " + formType + (propertyName ? " — " + propertyName : ""),
+          from_name: entry.name,
+          replyto: entry.email,
+          name: entry.name,
+          email: entry.email,
+          phone: entry.phone || "",
+          who: entry.who || "",
+          property: propertyName,
+          unit: unit,
+          property_id: propertyId,
+          place: entry.place || "",
+          message: entry.message,
+          submission_id: submissionId,
+        };
+        if (String(forms.accessKey || "").trim()) payload.access_key = String(forms.accessKey).trim();
+        const url = String(forms.endpoint || "").trim() || "https://api.web3forms.com/submit";
+        form.dataset.sending = "1";
+        if (button) {
+          button.disabled = true;
+          button.setAttribute("aria-busy", "true");
+          button.textContent = "Sending";
+        }
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(payload),
+        }).then((response) => response.json().then((data) => ({ response, data })).catch(() => ({ response, data: {} })))
+          .then(({ response, data }) => {
+            const acceptedByService = response.ok && (data.success === true || data.ok === true);
+            if (!acceptedByService) {
+              const detail = data && typeof data.message === "string" ? data.message : "The office inbox did not accept this message. Your entries are still here.";
+              showFormError(status, detail);
+              submissionId = "";
+              return;
+            }
+            const notes = JSON.parse(localStorage.getItem("dracka.notes") || "[]");
+            notes.push({
+              at: new Date().toISOString(),
+              form_type: formType,
+              name: entry.name,
+              email: entry.email,
+              phone: entry.phone || "",
+              who: entry.who || "",
+              subject: entry.subject || "",
+              property: propertyName,
+              unit: unit,
+              property_id: propertyId,
+              message: entry.message,
+            });
+            localStorage.setItem("dracka.notes", JSON.stringify(notes));
+            rememberAccepted(fingerprint);
+            const success = form.parentElement.querySelector(".form-success");
+            form.hidden = true;
+            success.hidden = false;
+            success.focus();
+          })
+          .catch(() => {
+            showFormError(status, "The message was not sent. Check your connection and try again. Nothing was delivered.");
+            submissionId = "";
+          })
+          .finally(() => {
+            form.dataset.sending = "";
+            if (button && !form.hidden) {
+              button.disabled = false;
+              button.removeAttribute("aria-busy");
+              button.textContent = idleLabel;
+            }
+          });
       });
     });
+  }
+
+  function showFormError(status, message) {
+    status.textContent = message;
+    status.hidden = false;
+    status.focus && status.setAttribute("tabindex", "-1");
+    status.focus();
+  }
+
+  function acceptedForms() {
+    try { return JSON.parse(sessionStorage.getItem("draka.acceptedForms") || "[]"); }
+    catch (error) { return []; }
+  }
+
+  function rememberAccepted(fingerprint) {
+    const list = acceptedForms();
+    list.push(fingerprint);
+    sessionStorage.setItem("draka.acceptedForms", JSON.stringify(list.slice(-20)));
   }
 })();

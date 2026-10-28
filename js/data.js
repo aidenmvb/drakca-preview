@@ -10,6 +10,11 @@ const DRAKA = {
     email: "drakaLLC@gmail.com",
     emailHref: "mailto:drakaLLC@gmail.com",
   },
+  forms: {
+    provider: "web3forms",
+    accessKey: "",
+    endpoint: "",
+  },
   base: "Bethesda, Maryland",
   markets: ["Maryland","Virginia","Washington, D.C."],
   people: [
