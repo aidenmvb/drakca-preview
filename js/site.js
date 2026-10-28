@@ -1,7 +1,7 @@
 (function () {
   let properties = [];
   let listingsUnavailable = false;
-  const listingsUnavailableMessage = "The property list cannot be loaded right now. Please try again shortly, or call us.";
+  const listingsUnavailableMessage = "The property list is not available right now. Please try again, or call us.";
   const page = document.body.dataset.page || "";
 
   document.querySelectorAll("[data-phone]").forEach((el) => {
@@ -102,7 +102,28 @@
     leasePreview.hidden = preview.length === 0;
     leasePreview.innerHTML = preview.map((property) => previewCard(property)).join("");
     if (viewAll) viewAll.hidden = preview.length === 0;
-    if (leaseEmpty) leaseEmpty.hidden = preview.length !== 0;
+    if (leaseEmpty) {
+      leaseEmpty.hidden = preview.length !== 0;
+      if (preview.length === 0) leaseEmpty.textContent = "No rentals are listed right now. Call us about what is coming available.";
+    }
+  }
+
+  function imageSize(src) {
+    const file = String(src || "");
+    if (file.indexOf("3401-bunker-hill-road") !== -1) return ' width="524" height="900"';
+    if (file.indexOf("key-boulevard-104") !== -1) return ' width="768" height="576"';
+    return "";
+  }
+
+  function setMeta(selector, content) {
+    const el = document.querySelector(selector);
+    if (el && content) el.setAttribute("content", content);
+  }
+
+  function shareText(value) {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    if (text.length <= 180) return text;
+    return text.slice(0, 177).replace(/\s+\S*$/, "") + "…";
   }
 
   function esc(value) {
@@ -214,7 +235,7 @@
       ? [property.price, property.available ? "Available " + property.available : ""].filter(Boolean).join(" · ")
       : "";
     const photo = property.image
-      ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '">' +
+      ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"' + imageSize(property.image) + ' loading="lazy" decoding="async">' +
           (property.caption ? '<figcaption class="photo-caption">' + esc(property.caption) + "</figcaption>" : "") +
         "</figure>"
       : offered
@@ -258,10 +279,10 @@
       : property.price
       ? "Offered at " + property.price + (property.available ? ", available " + property.available : "") + "."
       : property.intent === "sale"
-        ? "For sale. Ask us for the price."
+        ? "For sale. Contact us for pricing."
         : property.intent === "both"
           ? (property.unit ? property.unit + ". " : "") + "For lease and for sale."
-          : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Ask us for the rent." : "Ask us for the details.");
+          : (property.unit ? property.unit + ". " : "") + (property.open ? "Available now. Contact us for pricing." : "Contact us for more information.");
     const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     return (
       '<a class="preview-card" href="' + esc(propertyHref(property)) + '">' +
@@ -404,7 +425,7 @@
         ).join("") +
       "</div>"
     ).join("") +
-      '<div class="filter-row"><span class="filter-label">Availability</span><button type="button" class="chip" data-key="open" data-value="1">Open now</button></div>';
+      '<div class="filter-row" role="group" aria-label="Availability"><span class="filter-label">Availability</span><button type="button" class="chip" data-key="open" data-value="1">Available now</button></div>';
 
     function describe() {
       const bits = [];
@@ -412,7 +433,7 @@
       if (state.intent === "rent") bits.push("for lease");
       if (state.type !== "All") bits.push(state.type.toLowerCase());
       if (state.role !== "All") bits.push(state.role.toLowerCase());
-      if (state.open) bits.push("open now");
+      if (state.open) bits.push("available now");
       let text = bits.join(", ");
       if (state.state !== "All") text = (text ? text + " in " : "in ") + state.state;
       if (state.q) text = (text ? text + ", " : "") + "matching “" + state.q + "”";
@@ -493,8 +514,8 @@
       }
       if (clear) clear.hidden = !search;
       book.innerHTML =
-        bookGroup("available", "Available properties", "Listings the office is offering for lease or for sale.", available) +
-        bookGroup("portfolio", "Our portfolio", "Other properties we own or manage. A listing here is not a current offer unless its page says so.", portfolio);
+        bookGroup("available", "Available properties", "Properties we are currently offering for lease or for sale.", available) +
+        bookGroup("portfolio", "Our portfolio", "Other properties we own or manage. These are not current offers.", portfolio);
       book.hidden = list.length === 0;
       if ((location.hash === "#available" || location.hash === "#portfolio") && !render.scrolled) {
         render.scrolled = true;
@@ -504,8 +525,8 @@
         empty.hidden = list.length !== 0;
         if (emptyCopy) {
           emptyCopy.textContent = catalog().length
-            ? (search ? "Nothing in the portfolio matches " + search + "." : "Nothing in the portfolio matches.")
-            : "Contact DRAKA about a property in Maryland, Virginia, or Washington, D.C.";
+            ? (search ? "No properties match " + search + "." : "No properties match this search.")
+            : "Contact us about a property in Maryland, Virginia, or Washington, D.C.";
         }
       }
     }
@@ -568,10 +589,51 @@
     const property = properties.find((item) => item.id === id);
     if (!property) {
       document.title = "Property not found — DRAKA";
-      root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>That property is not listed.</h1><p class="lede">The full list is on the properties page.</p><p class="hero-actions"><a class="btn" href="properties.html">Back to properties</a></p></div></section>';
+      setMeta('meta[name="description"]', "This address is not on the DRAKA property list.");
+      root.innerHTML = '<section class="page-hero"><div class="hero-shade" aria-hidden="true"></div><div class="wrap"><p class="eyebrow">Portfolio</p><h1>This property is not listed.</h1><p class="lede">Browse the portfolio, or contact us if you have an address in mind.</p><p class="hero-actions"><a class="btn" href="properties.html">View properties</a><a class="btn-glass" href="contact.html">Contact us</a></p></div></section>';
       return;
     }
     document.title = property.name + " — DRAKA";
+    const bioSource = typeof property.bio === "string" && property.bio.trim() && property.bio.trim() !== "N/A" ? property.bio : (property.summary || property.name);
+    const description = shareText(bioSource);
+    setMeta('meta[name="description"]', description);
+    setMeta('meta[property="og:title"]', property.name + " — DRAKA");
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[name="twitter:title"]', property.name + " — DRAKA");
+    setMeta('meta[name="twitter:description"]', description);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const propertyPath = "property.html?id=" + encodeURIComponent(property.id);
+    if (canonical) canonical.setAttribute("href", propertyPath);
+    const shareHost = location.hostname === "drakallc.com" || location.hostname === "www.drakallc.com"
+      ? "https://drakallc.com/"
+      : (location.hostname === "aidenmvb.github.io" ? "https://aidenmvb.github.io/drakca-preview/" : "");
+    if (shareHost) {
+      setMeta('meta[property="og:url"]', shareHost + propertyPath);
+      if (property.image) {
+        setMeta('meta[property="og:image"]', shareHost + property.image);
+        setMeta('meta[name="twitter:image"]', shareHost + property.image);
+      }
+    }
+    const listingData = {
+      "@context": "https://schema.org",
+      "@type": marketed(property) ? "RealEstateListing" : "Place",
+      name: property.name,
+      description: description,
+    };
+    const address = { "@type": "PostalAddress", addressCountry: "US" };
+    if (property.street) address.streetAddress = property.street;
+    if (property.neighborhood) address.addressLocality = property.neighborhood;
+    if (property.state) address.addressRegion = property.state;
+    if (address.streetAddress) listingData.address = address;
+    if (property.image && shareHost) listingData.image = shareHost + property.image;
+    let listingJson = document.getElementById("listing-json");
+    if (!listingJson) {
+      listingJson = document.createElement("script");
+      listingJson.id = "listing-json";
+      listingJson.type = "application/ld+json";
+      document.head.appendChild(listingJson);
+    }
+    listingJson.textContent = JSON.stringify(listingData);
     const story = Array.isArray(property.story) ? property.story : [];
     const bioText = typeof property.bio === "string" && property.bio.trim() ? property.bio.trim() : "N/A";
     const bioHtml = bioText.split(/\n\n+/).map((paragraph) => "<p>" + esc(paragraph.trim()) + "</p>").join("");
@@ -579,6 +641,9 @@
       '<img src="' + esc(image.src) + '" alt="' + esc(image.alt) + '" loading="lazy">'
     ).join("");
     const applyHref = property.applyHref || ("contact.html?property=" + encodeURIComponent(property.name) + "&topic=apply");
+    const applyLabel = !property.applyHref || String(property.applyHref).indexOf("contact.html") === 0
+      ? "Request application details"
+      : "Apply";
     const tourHref = "contact.html?property=" + encodeURIComponent(property.name) + "&topic=tour";
     const leaseOffer = marketed(property) && offersRent(property);
     const saleOnly = marketed(property) && property.intent === "sale";
@@ -608,7 +673,8 @@
     const contact = DRAKA.contact || {};
     const photo = property.image
       ? '<figure class="listing-photo">' +
-          '<img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"' +
+          '<img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"' + imageSize(property.image) +
+            ' decoding="async" fetchpriority="high"' +
             (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
         "</figure>" +
         (property.caption ? '<p class="photo-caption">' + esc(property.caption) + "</p>" : "")
@@ -639,23 +705,23 @@
               "<p>" + (leaseOffer
                 ? "Contact us for pricing, availability, or to arrange a viewing."
                 : saleOnly
-                  ? "Contact us about the sale or to arrange a viewing."
-                  : "Ask the office about this property.") + "</p>" +
+                  ? "Contact us for pricing and to arrange a viewing."
+                  : "Contact us for more information.") + "</p>" +
               '<div class="listing-actions">' +
                 (leaseOffer
-                  ? '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">Apply</a>' +
+                  ? '<a class="btn-glass btn-glass-strong" href="' + esc(applyHref) + '">' + esc(applyLabel) + "</a>" +
                     '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>'
                   : saleOnly
-                    ? '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire about this property</a>' +
+                    ? '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire</a>' +
                       '<a class="btn-glass" href="' + esc(tourHref) + '">Request a tour</a>'
-                    : '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire about this property</a>') +
+                    : '<a class="btn-glass btn-glass-strong" href="' + esc(inquireHref) + '">Inquire</a>') +
                 (contact.phoneHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.phoneHref) + '">' + esc(contact.phone) + "</a>" : "") +
                 (contact.emailHref ? '<a class="btn-glass btn-glass-plain" href="' + esc(contact.emailHref) + '">' + esc(contact.email) + "</a>" : "") +
               "</div>" +
             "</aside>" +
           "</div>" +
-          '<section class="listing-bio" id="bio" aria-label="Bio">' +
-            "<h2>Bio</h2>" +
+          '<section class="listing-bio" id="bio" aria-label="About this property">' +
+            "<h2>About this property</h2>" +
             bioHtml +
           "</section>" +
         "</div>" +
@@ -674,9 +740,9 @@
         if (topic === "apply") form.elements.who.value = "Applying for a property";
         if (topic === "inquiry") form.elements.who.value = "Something else";
         if (topic === "sale") form.elements.who.value = "Buying or selling";
-        if (topic === "availability") form.elements.who.value = "Looking for a home or a shop";
-        if (topic === "owner") form.elements.who.value = "An owner";
-        if (topic === "resident" && slot !== "maintenance") form.elements.who.value = "A resident";
+        if (topic === "availability") form.elements.who.value = "Finding a property";
+        if (topic === "owner") form.elements.who.value = "A property I own";
+        if (topic === "resident" && slot !== "maintenance") form.elements.who.value = "A home I rent";
         if (topic === "brokerage") form.elements.who.value = "Buying or selling";
         if (topic === "estimate") form.elements.who.value = "Requesting an estimate";
         if (topic === "tour") form.elements.who.value = "Scheduling a tour";
@@ -685,14 +751,17 @@
       form.addEventListener("submit", (event) => {
         event.preventDefault();
         form.querySelectorAll(".error").forEach((node) => node.remove());
-        form.querySelectorAll("[aria-invalid]").forEach((node) => node.removeAttribute("aria-invalid"));
+        form.querySelectorAll("[aria-invalid]").forEach((node) => {
+          node.removeAttribute("aria-invalid");
+          node.removeAttribute("aria-describedby");
+        });
         const checks = [
           [form.elements.name, form.elements.name.value.trim().length > 1, "Enter your name."],
-          [form.elements.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.elements.email.value.trim()), "Enter a valid email."],
-          [form.elements.message, form.elements.message.value.trim().length >= 8, "Add a short note so we know how to help."],
+          [form.elements.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.elements.email.value.trim()), "Enter a valid email address."],
+          [form.elements.message, form.elements.message.value.trim().length >= 8, "Write a short message so we know how to help."],
         ];
         if (form.elements.subject && form.elements.subject.required) {
-          checks.push([form.elements.subject, form.elements.subject.value.trim().length > 1, "Name the property."]);
+          checks.push([form.elements.subject, form.elements.subject.value.trim().length > 1, "Enter the property or address."]);
         }
         let valid = true;
         checks.forEach(([field, ok, message]) => {
@@ -701,7 +770,9 @@
           field.setAttribute("aria-invalid", "true");
           const note = document.createElement("p");
           note.className = "error";
+          note.id = (field.id || "field") + "-error";
           note.textContent = message;
+          field.setAttribute("aria-describedby", note.id);
           field.closest(".field").appendChild(note);
         });
         if (!valid) {
@@ -717,7 +788,7 @@
           "Name: " + entry.name,
           "Email: " + entry.email,
           "Phone: " + (entry.phone || "—"),
-          "I am: " + (entry.who || "—"),
+          "How can we help: " + (entry.who || "—"),
         ];
         if (entry.place) lines.push("Kind of property: " + entry.place);
         lines.push("About: " + (entry.subject || "—"), "", entry.message);

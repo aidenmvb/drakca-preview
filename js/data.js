@@ -32,7 +32,7 @@ const DRAKA = {
       price: "$6,000/month",
       available: "December 2026",
       summary: "Four-bedroom house in Silver Spring, $6,000 a month from December 2026.",
-      bio: "1607 Lansdowne Way is a single-family house in Silver Spring, offered for lease at $6,000 a month beginning December 2026. The house has four bedrooms, three bathrooms, and about 1,216 square feet. Heat is forced air, and a washer, dryer, and refrigerator are included. Cats and small dogs are allowed. The lease is one year, and the tenant takes care of utilities, the lawn, and the gutters.",
+      bio: "1607 Lansdowne Way is a single-family house in Silver Spring, for lease at $6,000 a month beginning December 2026. It has four bedrooms, three bathrooms, and about 1,216 square feet. Heat is forced air. A washer, dryer, and refrigerator are included. Cats and small dogs are allowed. The lease is one year, and the tenant pays the utilities and maintains the lawn and gutters.",
       story: [
         "1607 Lansdowne Way is a single-family house in Silver Spring, offered for lease at $6,000 a month beginning December 2026.",
         "The house has four bedrooms, three bathrooms, and about 1,216 square feet. Heat is forced air, and a washer, dryer, and refrigerator are included. Cats and small dogs are allowed. The lease is one year, and the tenant takes care of utilities, the lawn, and the gutters."
@@ -85,11 +85,12 @@ const DRAKA = {
       scale: "1,230 sq ft",
       image: "images/key-boulevard-104.jpg",
       alt: "Living room at 1530 Key Boulevard, Atrium 104",
+      caption: "Living room.",
       summary: "Two-bedroom condominium at The Atrium, with a private patio and garage parking.",
-      bio: "Atrium 104 is a two-bedroom, two-bathroom condominium at 1530 Key Boulevard, in The Atrium in Rosslyn, Arlington. The unit is about 1,230 square feet. It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The photograph is the living room. The building has a front desk, a fitness center, an outdoor pool, and tennis courts.",
+      bio: "Atrium 104 is a two-bedroom, two-bathroom condominium at 1530 Key Boulevard, in The Atrium in Rosslyn, Arlington. The unit is about 1,230 square feet. It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The building has a front desk, a fitness center, an outdoor pool, and tennis courts.",
       story: [
         "Atrium 104 is a two-bedroom, two-bathroom condominium at 1530 Key Boulevard, in The Atrium in Arlington. The unit is about 1,230 square feet.",
-        "It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The photograph is the living room.",
+        "It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator.",
         "The Atrium has a front desk, a fitness center, an outdoor pool, and tennis courts."
       ]
     },
@@ -131,7 +132,7 @@ const DRAKA = {
       price: "$5,000/month",
       available: "November 1",
       summary: "Two-bedroom condominium on Key Boulevard in Arlington, about 1,230 square feet.",
-      bio: "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1. The home has a private patio, a kitchen with updated appliances, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center, a tennis court, and a dry cleaner. It is wheelchair accessible, and smoking is not permitted. Pets are accepted with an additional deposit, and breed restrictions may apply. The posted application fee is $65 per adult applicant. The posting places the condominium near the Rosslyn Metro and the Key Bridge.",
+      bio: "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1. The home has a private patio, a kitchen with updated appliances, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center, a tennis court, and a dry cleaner. It is wheelchair accessible, and smoking is not permitted. Pets are accepted with an additional deposit, and breed restrictions may apply. The posted application fee is $65 per adult applicant. It is near the Rosslyn Metro and the Key Bridge.",
       story: [
         "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1.",
         "The home has a private patio, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center and a tennis court. It is wheelchair accessible, smoking is not permitted, and pets are accepted with an additional deposit."
@@ -181,7 +182,7 @@ const DRAKA = {
       summary: "Home in Mount Rainier, with Unit 1 and Unit 2 listed separately.",
       bio: "N/A",
       story: [
-        "3323 Bunker Hill Road is a home in Mount Rainier. It has two residences, Unit 1 and Unit 2, and each has its own page.",
+        "3323 Bunker Hill Road is a home in Mount Rainier. It has two residences, Unit 1 and Unit 2, and each is listed separately.",
         "The house is on Bunker Hill Road in Mount Rainier."
       ]
     },
@@ -234,12 +235,13 @@ const DRAKA = {
       price: "$1,000/month",
       image: "images/3401-bunker-hill-road.jpg",
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 3.",
+      caption: "Building exterior.",
       summary: "Studio in Mount Rainier, $1,000 a month, available now.",
-      bio: "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,000 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building.",
+      bio: "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,000 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington.",
       story: [
         "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,000 a month.",
         "The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted.",
-        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building."
+        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington."
       ]
     },
     {
@@ -258,12 +260,13 @@ const DRAKA = {
       price: "$1,200/month",
       image: "images/3401-bunker-hill-road.jpg",
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 8.",
+      caption: "Building exterior.",
       summary: "One-bedroom in Mount Rainier, $1,200 a month, available now.",
-      bio: "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,200 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building.",
+      bio: "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,200 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington.",
       story: [
         "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,200 a month.",
         "The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted.",
-        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building."
+        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington."
       ]
     },
     {
@@ -283,7 +286,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier. Units 3 and 8 in the same building are listed separately, with their own rents and terms.",
-        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium. The photograph is the building exterior."
+        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium."
       ]
     },
     {
@@ -342,7 +345,7 @@ const DRAKA = {
       summary: "Home on 34th Street in Mount Rainier, with a residence and a storefront.",
       bio: "N/A",
       story: [
-        "3817 34th Street is a property in Mount Rainier. Apt 1 is the residence, and Storefront A is the retail space. Each is listed on its own page.",
+        "3817 34th Street is a property in Mount Rainier. Apt 1 is the residence, and Storefront A is the retail space. Each is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
@@ -392,7 +395,7 @@ const DRAKA = {
       summary: "Home at 3830 34th Street in Mount Rainier’s Gateway Arts District.",
       bio: "N/A",
       story: [
-        "3830 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
+        "3830 34th Street is a home in Mount Rainier.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
@@ -442,7 +445,7 @@ const DRAKA = {
       summary: "Home at 3840 34th Street in Mount Rainier’s Gateway Arts District.",
       bio: "N/A",
       story: [
-        "3840 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
+        "3840 34th Street is a home in Mount Rainier.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
@@ -458,7 +461,7 @@ const DRAKA = {
       summary: "Commercial space at 3850 34th Street in Mount Rainier.",
       bio: "N/A",
       story: [
-        "3850 34th Street has a commercial space and a home. This page is the commercial space. The home is listed separately.",
+        "3850 34th Street has a commercial space and a home. The home is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
       ]
     },
@@ -519,7 +522,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 8 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -535,7 +538,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 10 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -551,7 +554,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 14/16/17 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -567,7 +570,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 103/105 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -583,7 +586,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 106 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -599,7 +602,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 107 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -615,7 +618,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 108 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -631,7 +634,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 110 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -647,7 +650,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 200 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -663,7 +666,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 203/205 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -679,7 +682,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 206 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -695,7 +698,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 207 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -711,7 +714,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 210 is a space at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
+        "4318 Hamilton Street is a multi-unit property in Hyattsville."
       ]
     },
     {
@@ -728,7 +731,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "This barber booth is a workspace at 7930-7932 Georgia Avenue in Silver Spring. Booths 1 through 6, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -745,7 +748,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 1 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -762,7 +765,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 2 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -779,7 +782,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 3 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -796,7 +799,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 4 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -813,7 +816,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 5 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -830,7 +833,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Booth 6 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building."
       ]
     },
     {
@@ -846,7 +849,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "Unit 105 is a space at 7930-7932 Georgia Avenue in Silver Spring. The barber booths at this address are separate listings.",
-        "The space is in the same building as the booths. It is not a booth."
+        "Unit 105 is in the same building as the barber booths."
       ]
     },
     {
@@ -876,7 +879,7 @@ const DRAKA = {
       bio: "N/A",
       story: [
         "950 Sligo Avenue is a property in downtown Silver Spring and is offered for sale.",
-        "The price is not posted. Ask the office for the price and for a viewing."
+        "Contact us for pricing and to arrange a viewing."
       ]
     }
   ]
