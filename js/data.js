@@ -32,6 +32,7 @@ const DRAKA = {
       price: "$6,000/month",
       available: "December 2026",
       summary: "Four-bedroom house in Silver Spring, $6,000 a month from December 2026.",
+      bio: "1607 Lansdowne Way is a single-family house in Silver Spring, offered for lease at $6,000 a month beginning December 2026. The house has four bedrooms, three bathrooms, and about 1,216 square feet. Heat is forced air, and a washer, dryer, and refrigerator are included. Cats and small dogs are allowed. The lease is one year, and the tenant takes care of utilities, the lawn, and the gutters.",
       story: [
         "1607 Lansdowne Way is a single-family house in Silver Spring, offered for lease at $6,000 a month beginning December 2026.",
         "The house has four bedrooms, three bathrooms, and about 1,216 square feet. Heat is forced air, and a washer, dryer, and refrigerator are included. Cats and small dogs are allowed. The lease is one year, and the tenant takes care of utilities, the lawn, and the gutters."
@@ -47,6 +48,7 @@ const DRAKA = {
       unit: "Unit 103",
       role: "Owned",
       summary: "Space at 11212 Grandview Avenue in downtown Wheaton.",
+      bio: "N/A",
       story: [
         "Unit 103 is a space at 11212 Grandview Avenue in Wheaton. Unit 107 is a separate space in the same building.",
         "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
@@ -62,6 +64,7 @@ const DRAKA = {
       unit: "Unit 107",
       role: "Owned",
       summary: "Space at 11212 Grandview Avenue in downtown Wheaton.",
+      bio: "N/A",
       story: [
         "Unit 107 is a space at 11212 Grandview Avenue in Wheaton. Unit 103 is a separate space in the same building.",
         "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
@@ -83,6 +86,7 @@ const DRAKA = {
       image: "images/key-boulevard-104.jpg",
       alt: "Living room at 1530 Key Boulevard, Atrium 104",
       summary: "Two-bedroom condominium at The Atrium, with a private patio and garage parking.",
+      bio: "Atrium 104 is a two-bedroom, two-bathroom condominium at 1530 Key Boulevard, in The Atrium in Rosslyn, Arlington. The unit is about 1,230 square feet. It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The photograph is the living room. The building has a front desk, a fitness center, an outdoor pool, and tennis courts.",
       story: [
         "Atrium 104 is a two-bedroom, two-bathroom condominium at 1530 Key Boulevard, in The Atrium in Arlington. The unit is about 1,230 square feet.",
         "It has a private concrete patio of about 360 square feet and an assigned space in the garage. Inside, the home has forced-air heat, hardwood and tile floors, and a washer, dryer, dishwasher, and refrigerator. The photograph is the living room.",
@@ -103,6 +107,7 @@ const DRAKA = {
       baths: "2",
       scale: "1,125 sq ft",
       summary: "One-bedroom condominium at The Atrium, with a balcony and garage parking.",
+      bio: "Unit 608 is a one-bedroom condominium at 1530 Key Boulevard, in The Atrium in Rosslyn, Arlington. The unit is about 1,125 square feet and has two bathrooms. A balcony of about 90 square feet opens off the unit, and parking is an assigned space in the garage. The building has a front desk, a fitness center, an outdoor pool, and tennis courts.",
       story: [
         "Unit 608 is a one-bedroom condominium at 1530 Key Boulevard, in The Atrium in Arlington. The unit is about 1,125 square feet and has two bathrooms.",
         "A balcony of about 90 square feet opens off the unit, and parking is an assigned space in the garage.",
@@ -126,6 +131,7 @@ const DRAKA = {
       price: "$5,000/month",
       available: "November 1",
       summary: "Two-bedroom condominium on Key Boulevard in Arlington, about 1,230 square feet.",
+      bio: "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1. The home has a private patio, a kitchen with updated appliances, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center, a tennis court, and a dry cleaner. It is wheelchair accessible, and smoking is not permitted. Pets are accepted with an additional deposit, and breed restrictions may apply. The posted application fee is $65 per adult applicant. The posting places the condominium near the Rosslyn Metro and the Key Bridge.",
       story: [
         "This is a two-bedroom, two-bathroom condominium on Key Boulevard in Arlington, about 1,230 square feet, offered at $5,000 a month from November 1.",
         "The home has a private patio, a washer and dryer, and central air and heat. Parking is an assigned garage space. The building has a fitness center and a tennis court. It is wheelchair accessible, smoking is not permitted, and pets are accepted with an additional deposit."
@@ -141,6 +147,7 @@ const DRAKA = {
       unit: "Lower Level",
       role: "Owned",
       summary: "Commercial lower level in Dupont Circle, for lease and for sale.",
+      bio: "N/A",
       story: [
         "The lower level at 1728-1730 Connecticut Avenue Northwest is commercial space, offered for lease and for sale. Unit 4A, a residence in the same building, is listed separately.",
         "The building is on Connecticut Avenue in the Dupont Circle neighborhood."
@@ -156,6 +163,7 @@ const DRAKA = {
       unit: "Unit 4A",
       role: "Owned",
       summary: "Residence in Dupont Circle, for lease and for sale.",
+      bio: "N/A",
       story: [
         "Unit 4A is a residence at 1728-1730 Connecticut Avenue Northwest, offered for lease and for sale. The commercial lower level in the same building is listed separately.",
         "The building is on Connecticut Avenue in the Dupont Circle neighborhood."
@@ -171,6 +179,7 @@ const DRAKA = {
       street: "3323 Bunker Hill Road",
       role: "Owned",
       summary: "Home in Mount Rainier, with Unit 1 and Unit 2 listed separately.",
+      bio: "N/A",
       story: [
         "3323 Bunker Hill Road is a home in Mount Rainier. It has two residences, Unit 1 and Unit 2, and each has its own page.",
         "The house is on Bunker Hill Road in Mount Rainier."
@@ -187,6 +196,7 @@ const DRAKA = {
       unit: "Unit 1",
       role: "Owned",
       summary: "Unit 1 at 3323 Bunker Hill Road in Mount Rainier.",
+      bio: "N/A",
       story: [
         "Unit 1 is one of two residences at 3323 Bunker Hill Road in Mount Rainier. Unit 2 is listed separately.",
         "The house is on Bunker Hill Road in Mount Rainier."
@@ -203,6 +213,7 @@ const DRAKA = {
       unit: "Unit 2",
       role: "Owned",
       summary: "Unit 2 at 3323 Bunker Hill Road in Mount Rainier.",
+      bio: "N/A",
       story: [
         "Unit 2 is one of two residences at 3323 Bunker Hill Road in Mount Rainier. Unit 1 is listed separately.",
         "The house is on Bunker Hill Road in Mount Rainier."
@@ -224,6 +235,7 @@ const DRAKA = {
       image: "images/3401-bunker-hill-road.jpg",
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 3.",
       summary: "Studio in Mount Rainier, $1,000 a month, available now.",
+      bio: "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,000 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building.",
       story: [
         "Unit 3 is a studio apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,000 a month.",
         "The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted.",
@@ -247,6 +259,7 @@ const DRAKA = {
       image: "images/3401-bunker-hill-road.jpg",
       alt: "Exterior of 3401 Bunker Hill Road. This is the building, not an interior photo of Unit 8.",
       summary: "One-bedroom in Mount Rainier, $1,200 a month, available now.",
+      bio: "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,200 a month. The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted. The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium and a short trip from Washington. The photograph shows the building.",
       story: [
         "Unit 8 is a one-bedroom apartment at 3401 Bunker Hill Road in Mount Rainier, available now at $1,200 a month.",
         "The apartment includes off-street parking. There is no laundry in the building, and smoking is not permitted.",
@@ -267,6 +280,7 @@ const DRAKA = {
       alt: "Building exterior.",
       caption: "Building exterior.",
       summary: "Residence at 3401 Bunker Hill Road in the Gateway Arts District.",
+      bio: "N/A",
       story: [
         "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier. Units 3 and 8 in the same building are listed separately, with their own rents and terms.",
         "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium. The photograph is the building exterior."
@@ -286,6 +300,7 @@ const DRAKA = {
       open: true,
       price: "$2,000/month",
       summary: "Live/work space at 3403 Bunker Hill Road, posted at $2,000 a month.",
+      bio: "3403 Bunker Hill Road in Mount Rainier is a live/work apartment, available now. The posted rent is $2,000 a month. A tenant can complete renovation work in exchange for a rent credit. The scope, the credit, the timeline, and the lease are agreed in writing. Live/work use depends on the approvals that apply. There is no laundry in the building, and parking is on the street.",
       story: [
         "3403 Bunker Hill Road in Mount Rainier is a live/work apartment, available now. The posted rent is $2,000 a month.",
         "A tenant can complete renovation work in exchange for a rent credit. The scope, the credit, the timeline, and the lease are agreed in writing. Live/work use depends on the approvals that apply.",
@@ -308,6 +323,7 @@ const DRAKA = {
       open: true,
       price: "$1,350/month",
       summary: "Renovated one-bedroom at 3403 Bunker Hill Road, $1,350 a month plus utilities.",
+      bio: "This is a renovated one-bedroom, one-bathroom apartment at 3403 Bunker Hill Road in Mount Rainier. Rent is $1,350 a month, plus utilities, and it is available now. Laundry is in the building, parking is on the street, and smoking is not permitted. The apartment is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium.",
       story: [
         "This is a renovated one-bedroom, one-bathroom apartment at 3403 Bunker Hill Road in Mount Rainier. Rent is $1,350 a month, plus utilities, and it is available now.",
         "Laundry is in the building, parking is on the street, and smoking is not permitted.",
@@ -324,6 +340,7 @@ const DRAKA = {
       street: "3817 34th Street",
       role: "Owned",
       summary: "Home on 34th Street in Mount Rainier, with a residence and a storefront.",
+      bio: "N/A",
       story: [
         "3817 34th Street is a property in Mount Rainier. Apt 1 is the residence, and Storefront A is the retail space. Each is listed on its own page.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -340,6 +357,7 @@ const DRAKA = {
       unit: "Apt 1",
       role: "Owned",
       summary: "Residence at 3817 34th Street in Mount Rainier’s Gateway Arts District.",
+      bio: "N/A",
       story: [
         "Apt 1 is the residence at 3817 34th Street in Mount Rainier. Storefront A, the retail space in the same property, is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -356,6 +374,7 @@ const DRAKA = {
       unit: "Storefront A",
       role: "Owned",
       summary: "Retail space at 3817 34th Street in Mount Rainier’s Gateway Arts District.",
+      bio: "N/A",
       story: [
         "Storefront A is the retail space at 3817 34th Street in Mount Rainier. Apt 1, the residence in the same property, is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -371,6 +390,7 @@ const DRAKA = {
       street: "3830 34th Street",
       role: "Owned",
       summary: "Home at 3830 34th Street in Mount Rainier’s Gateway Arts District.",
+      bio: "N/A",
       story: [
         "3830 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -387,6 +407,7 @@ const DRAKA = {
       unit: "Unit 2",
       role: "Owned",
       summary: "Residence at 3837 34th Street in Mount Rainier.",
+      bio: "N/A",
       story: [
         "Unit 2 is a residence at 3837 34th Street in Mount Rainier. Unit 3 is a separate residence in the same building.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -403,6 +424,7 @@ const DRAKA = {
       unit: "Unit 3",
       role: "Owned",
       summary: "Residence at 3837 34th Street in Mount Rainier.",
+      bio: "N/A",
       story: [
         "Unit 3 is a residence at 3837 34th Street in Mount Rainier. Unit 2 is a separate residence in the same building.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -418,6 +440,7 @@ const DRAKA = {
       street: "3840 34th Street",
       role: "Owned",
       summary: "Home at 3840 34th Street in Mount Rainier’s Gateway Arts District.",
+      bio: "N/A",
       story: [
         "3840 34th Street is a home in Mount Rainier, listed on its own, separate from the other properties on this street.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -433,6 +456,7 @@ const DRAKA = {
       street: "3850 34th Street",
       role: "Owned",
       summary: "Commercial space at 3850 34th Street in Mount Rainier.",
+      bio: "N/A",
       story: [
         "3850 34th Street has a commercial space and a home. This page is the commercial space. The home is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -448,6 +472,7 @@ const DRAKA = {
       street: "3850 34th Street",
       role: "Owned",
       summary: "Home at 3850 34th Street in Mount Rainier’s Gateway Arts District.",
+      bio: "N/A",
       story: [
         "3850 34th Street is a home in Mount Rainier. The commercial space at the same address is listed separately.",
         "The address is on 34th Street, in Mount Rainier’s downtown and the Gateway Arts District."
@@ -462,6 +487,7 @@ const DRAKA = {
       street: "4312 Hamilton Street",
       role: "Owned",
       summary: "Property at 4312 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "4312 Hamilton Street is a property in Hyattsville. It is listed separately from 4314 Hamilton Street and from the spaces at 4318 Hamilton Street."
       ]
@@ -475,6 +501,7 @@ const DRAKA = {
       street: "4314 Hamilton Street",
       role: "Owned",
       summary: "Property at 4314 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "4314 Hamilton Street is a property in Hyattsville. It is listed separately from 4312 Hamilton Street and from the spaces at 4318 Hamilton Street."
       ]
@@ -489,6 +516,7 @@ const DRAKA = {
       unit: "Unit 8",
       role: "Owned",
       summary: "Unit 8 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 8 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -504,6 +532,7 @@ const DRAKA = {
       unit: "Unit 10",
       role: "Owned",
       summary: "Unit 10 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 10 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -519,6 +548,7 @@ const DRAKA = {
       unit: "Unit 14/16/17",
       role: "Owned",
       summary: "Unit 14/16/17 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 14/16/17 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -534,6 +564,7 @@ const DRAKA = {
       unit: "Unit 103/105",
       role: "Owned",
       summary: "Unit 103/105 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 103/105 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -549,6 +580,7 @@ const DRAKA = {
       unit: "Unit 106",
       role: "Owned",
       summary: "Unit 106 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 106 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -564,6 +596,7 @@ const DRAKA = {
       unit: "Unit 107",
       role: "Owned",
       summary: "Unit 107 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 107 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -579,6 +612,7 @@ const DRAKA = {
       unit: "Unit 108",
       role: "Owned",
       summary: "Unit 108 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 108 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -594,6 +628,7 @@ const DRAKA = {
       unit: "Unit 110",
       role: "Owned",
       summary: "Unit 110 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 110 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -609,6 +644,7 @@ const DRAKA = {
       unit: "Unit 200",
       role: "Owned",
       summary: "Unit 200 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 200 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -624,6 +660,7 @@ const DRAKA = {
       unit: "Unit 203/205",
       role: "Owned",
       summary: "Unit 203/205 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 203/205 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -639,6 +676,7 @@ const DRAKA = {
       unit: "Unit 206",
       role: "Owned",
       summary: "Unit 206 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 206 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -654,6 +692,7 @@ const DRAKA = {
       unit: "Unit 207",
       role: "Owned",
       summary: "Unit 207 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 207 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -669,6 +708,7 @@ const DRAKA = {
       unit: "Unit 210",
       role: "Owned",
       summary: "Unit 210 at 4318 Hamilton Street in Hyattsville.",
+      bio: "N/A",
       story: [
         "Unit 210 is a space at 4318 Hamilton Street in Hyattsville.",
         "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
@@ -685,6 +725,7 @@ const DRAKA = {
       unit: "Barber booth",
       role: "Owned",
       summary: "Barber booth at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "This barber booth is a workspace at 7930-7932 Georgia Avenue in Silver Spring. Booths 1 through 6, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -701,6 +742,7 @@ const DRAKA = {
       unit: "Booth 1",
       role: "Owned",
       summary: "Booth 1 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 1 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -717,6 +759,7 @@ const DRAKA = {
       unit: "Booth 2",
       role: "Owned",
       summary: "Booth 2 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 2 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -733,6 +776,7 @@ const DRAKA = {
       unit: "Booth 3",
       role: "Owned",
       summary: "Booth 3 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 3 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -749,6 +793,7 @@ const DRAKA = {
       unit: "Booth 4",
       role: "Owned",
       summary: "Booth 4 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 4 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -765,6 +810,7 @@ const DRAKA = {
       unit: "Booth 5",
       role: "Owned",
       summary: "Booth 5 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 5 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -781,6 +827,7 @@ const DRAKA = {
       unit: "Booth 6",
       role: "Owned",
       summary: "Booth 6 at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Booth 6 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
         "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
@@ -796,6 +843,7 @@ const DRAKA = {
       unit: "Unit 105",
       role: "Owned",
       summary: "Space at 7930-7932 Georgia Avenue in Silver Spring.",
+      bio: "N/A",
       story: [
         "Unit 105 is a space at 7930-7932 Georgia Avenue in Silver Spring. The barber booths at this address are separate listings.",
         "The space is in the same building as the booths. It is not a booth."
@@ -811,6 +859,7 @@ const DRAKA = {
       street: "4719 Stamp Road",
       role: "Owned",
       summary: "Portfolio property in Temple Hills. Not offered for rent or for sale.",
+      bio: "N/A",
       story: [
         "4719 Stamp Road in Temple Hills is part of the portfolio. The office is not offering it for rent or for sale."
       ]
@@ -824,6 +873,7 @@ const DRAKA = {
       street: "950 Sligo Avenue",
       role: "Owned",
       summary: "950 Sligo Avenue in downtown Silver Spring, for sale.",
+      bio: "N/A",
       story: [
         "950 Sligo Avenue is a property in downtown Silver Spring and is offered for sale.",
         "The price is not posted. Ask the office for the price and for a viewing."

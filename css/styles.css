@@ -1017,6 +1017,27 @@ body[data-page="property"] .nav-panel a[aria-current="page"] { border-bottom-col
 .listing .facts > div { min-width: 0; }
 .listing .facts dd { overflow-wrap: break-word; }
 .listing .story p:first-child { margin-top: 1.2rem; color: var(--ink); }
+.listing-bio {
+  margin: 2.2rem 0 0.4rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--line);
+  max-width: 40rem;
+}
+.listing-bio h2 {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.listing-bio p {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
 .listing-card {
   position: sticky;
   top: calc(var(--header) + 0.85rem);

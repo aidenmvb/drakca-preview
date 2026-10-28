@@ -470,7 +470,7 @@
         if (state.open && property.open !== true) return false;
         if (query) {
           const story = Array.isArray(property.story) ? property.story.join(" ") : property.story;
-          const haystack = [property.name, property.neighborhood, story, property.state, property.street, property.unit, property.type, property.scale, property.price, property.intent].join(" ").toLowerCase();
+          const haystack = [property.name, property.neighborhood, story, property.bio, property.state, property.street, property.unit, property.type, property.scale, property.price, property.intent].join(" ").toLowerCase();
           if (!haystack.includes(query)) return false;
         }
         return true;
@@ -573,6 +573,8 @@
     }
     document.title = property.name + " — DRAKA";
     const story = Array.isArray(property.story) ? property.story : [];
+    const bioText = typeof property.bio === "string" && property.bio.trim() ? property.bio.trim() : "N/A";
+    const bioHtml = bioText.split(/\n\n+/).map((paragraph) => "<p>" + esc(paragraph.trim()) + "</p>").join("");
     const gallery = (property.gallery || []).map((image) =>
       '<img src="' + esc(image.src) + '" alt="' + esc(image.alt) + '" loading="lazy">'
     ).join("");
@@ -626,7 +628,9 @@
               (asksForDetails(property) ? '<p class="listing-place">Contact us for further details.</p>' : "") +
               '<p class="listing-meta">' + chips.map((chip) => "<span>" + esc(chip) + "</span>").join("") + "</p>" +
               facts +
-              '<div class="story">' + story.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>" +
+              (bioText === "N/A"
+                ? '<div class="story">' + story.map((paragraph) => "<p>" + esc(paragraph) + "</p>").join("") + "</div>"
+                : "") +
               (gallery ? '<div class="gallery">' + gallery + "</div>" : "") +
             "</div>" +
             '<aside class="listing-card">' +
@@ -650,6 +654,10 @@
               "</div>" +
             "</aside>" +
           "</div>" +
+          '<section class="listing-bio" id="bio" aria-label="Bio">' +
+            "<h2>Bio</h2>" +
+            bioHtml +
+          "</section>" +
         "</div>" +
       "</article>";
   }
