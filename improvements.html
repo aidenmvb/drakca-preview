@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=26">
+  <link rel="stylesheet" href="css/styles.css?v=27">
 </head>
 <body data-page="improvements">
   <a class="skip" href="#main">Skip to content</a>
@@ -69,23 +69,20 @@
           <h2>From assessment to estimate.</h2>
           <p class="lede">Improvement and repair services are quoted and billed separately from rent.</p>
         </header>
-        <div class="steps">
-          <article class="step">
-            <p class="num">01</p>
+        <ol class="process-rail">
+          <li>
             <h3>Tell us about your project</h3>
             <p>A house, a shop, an office, or a unit in a rental. Describe the work you need.</p>
-          </article>
-          <article class="step">
-            <p class="num">02</p>
+          </li>
+          <li>
             <h3>Property assessment</h3>
             <p>We assess the work before preparing your estimate.</p>
-          </article>
-          <article class="step">
-            <p class="num">03</p>
+          </li>
+          <li>
             <h3>A written estimate</h3>
             <p>You see the scope before any work starts.</p>
-          </article>
-        </div>
+          </li>
+        </ol>
         <div class="edit-split">
           <div>
             <h3>Projects we handle</h3>
@@ -100,21 +97,24 @@
             <p>We take this work in Maryland, Virginia, and Washington, D.C.</p>
           </div>
         </div>
-        <div class="inquiry-block" id="estimate">
+        <div class="inquiry-stage" id="estimate">
+          <img class="inquiry-stage-photo" src="images/living.jpg" alt="" width="1248" height="832" loading="lazy" decoding="async">
+          <div class="inquiry-block">
           <div>
             <p class="eyebrow">Estimate</p>
             <h2>Request an estimate.</h2>
             <p class="lede">Share the property and describe the work. We reply at the email you give, or you can call <a data-phone href=""></a>. To look at financing, <a href="#financing">see the options below</a>.</p>
+            <p class="photo-note">The photograph behind this form is atmosphere. It is not a project photo.</p>
           </div>
           <div>
             <form class="desk-form form" data-topic="estimate" novalidate>
               <input type="hidden" name="who" value="Requesting an estimate">
               <div class="form-row">
-                <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
-                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+                <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" placeholder="Your name" required></div>
+                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@email.com" required></div>
               </div>
               <div class="form-row">
-                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Area code and number"></div>
                 <div class="field">
                   <label for="place">Kind of property</label>
                   <select id="place" name="place">
@@ -124,8 +124,8 @@
                   </select>
                 </div>
               </div>
-              <div class="field"><label for="subject">Address</label><input id="subject" name="subject" required></div>
-              <div class="field"><label for="message">Describe the work you need</label><textarea id="message" name="message" required></textarea></div>
+              <div class="field"><label for="subject">Address</label><input id="subject" name="subject" placeholder="Street and city" required></div>
+              <div class="field"><label for="message">Describe the work you need</label><textarea id="message" name="message" placeholder="What needs attention" required></textarea></div>
               <button class="btn" type="submit">Request an estimate</button>
               <p class="form-hint">This opens your email app. We receive the message only after you send it.</p>
             </form>
@@ -137,6 +137,7 @@
               <p class="form-follow">If it cannot wait, call <a data-phone href=""></a>.</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -177,14 +178,14 @@
             <form class="desk-form form" data-topic="maintenance" novalidate>
               <input type="hidden" name="who" value="A maintenance request">
               <div class="form-row">
-                <div class="field"><label for="maint-name">Name</label><input id="maint-name" name="name" autocomplete="name" required></div>
-                <div class="field"><label for="maint-email">Email</label><input id="maint-email" name="email" type="email" autocomplete="email" required></div>
+                <div class="field"><label for="maint-name">Name</label><input id="maint-name" name="name" autocomplete="name" placeholder="Your name" required></div>
+                <div class="field"><label for="maint-email">Email</label><input id="maint-email" name="email" type="email" autocomplete="email" placeholder="name@email.com" required></div>
               </div>
               <div class="form-row">
-                <div class="field"><label for="maint-phone">Phone</label><input id="maint-phone" name="phone" type="tel" autocomplete="tel"></div>
-                <div class="field"><label for="maint-subject">Property and unit</label><input id="maint-subject" name="subject" required></div>
+                <div class="field"><label for="maint-phone">Phone</label><input id="maint-phone" name="phone" type="tel" autocomplete="tel" placeholder="Area code and number"></div>
+                <div class="field"><label for="maint-subject">Property and unit</label><input id="maint-subject" name="subject" placeholder="Building and unit" required></div>
               </div>
-              <div class="field"><label for="maint-message">Describe the work you need</label><textarea id="maint-message" name="message" required></textarea></div>
+              <div class="field"><label for="maint-message">Describe the work you need</label><textarea id="maint-message" name="message" placeholder="What needs attention" required></textarea></div>
               <button class="btn" type="submit">Request maintenance</button>
               <p class="form-hint">This opens your email app. We receive the request only after you send it.</p>
             </form>
