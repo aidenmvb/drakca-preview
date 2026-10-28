@@ -2,7 +2,7 @@
 
 The public pages post Contact, estimate, owner, and maintenance inquiries as JSON. They do not open the visitor’s email app. Success is shown only when the form host returns `success: true` or `ok: true`.
 
-No form host is connected. `DRAKA.forms.accessKey` and `DRAKA.forms.endpoint` in `js/data.js` are empty, so the pages tell the visitor the message was not sent. There is no secret key in this folder.
+The preview copies the access key from `~/.config/draka/web3forms-access-key` into `forms.accessKey`. `forms.endpoint` stays empty. That key is a public alias for `drakcaom@gmail.com`. A key created for an earlier inbox still delivers to that inbox, so do not install one.
 
 ## Connect the free Web3Forms inbox
 
