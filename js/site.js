@@ -214,7 +214,9 @@
       ? [property.price, property.available ? "Available " + property.available : ""].filter(Boolean).join(" · ")
       : "";
     const photo = property.image
-      ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"></figure>'
+      ? '<figure><img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '">' +
+          (property.caption ? '<figcaption class="photo-caption">' + esc(property.caption) + "</figcaption>" : "") +
+        "</figure>"
       : offered
         ? '<figure class="card-photo-empty"><p class="listing-photo-note">Photos coming soon</p></figure>'
         : "";
@@ -606,7 +608,8 @@
       ? '<figure class="listing-photo">' +
           '<img src="' + esc(property.image) + '" alt="' + esc(property.alt || "") + '"' +
             (property.pos ? ' style="object-position:' + esc(property.pos) + '"' : "") + ">" +
-        "</figure>"
+        "</figure>" +
+        (property.caption ? '<p class="photo-caption">' + esc(property.caption) + "</p>" : "")
       : '<figure class="listing-photo listing-photo-empty">' +
           '<p class="listing-photo-note">Photos coming soon</p>' +
         "</figure>";

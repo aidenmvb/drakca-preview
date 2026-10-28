@@ -770,6 +770,14 @@ a.market:hover h3 { text-decoration: underline; text-underline-offset: 0.14em; }
   font-size: 0.98rem;
 }
 .card img { width: 100%; aspect-ratio: 3/2; object-fit: cover; transition: transform .45s ease; }
+.photo-caption {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.card .photo-caption { margin: 0; padding: 0.55rem 1.15rem 0; }
 .card:hover img { transform: scale(1.035); }
 .card-body { padding: 1.05rem 1.15rem 1.15rem; }
 .card h3 { font-size: 1.45rem; margin: 0.3rem 0 0.25rem; }

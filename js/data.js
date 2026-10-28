@@ -265,10 +265,13 @@ const DRAKA = {
       street: "3401 Bunker Hill Road",
       unit: "Unit 101",
       role: "Owned",
+      image: "images/3401-bunker-hill-road.jpg",
+      alt: "Building exterior.",
+      caption: "Building exterior.",
       summary: "Residence at 3401 Bunker Hill Road in the Gateway Arts District.",
       story: [
         "Unit 101 is a residence at 3401 Bunker Hill Road in Mount Rainier. Units 3 and 8 in the same building are listed separately, with their own rents and terms.",
-        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium."
+        "The building is in Mount Rainier’s Gateway Arts District, near Joe’s Movement Emporium. The photograph is the building exterior."
       ]
     },
     {
