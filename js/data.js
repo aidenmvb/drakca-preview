@@ -41,15 +41,14 @@ const DRAKA = {
       id: "11212-grandview-avenue-unit-103",
       name: "11212 Grandview Avenue, Unit 103",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Wheaton",
       street: "11212 Grandview Avenue",
       unit: "Unit 103",
       role: "Owned",
-      summary: "Residence at 11212 Grandview Avenue in downtown Wheaton.",
+      summary: "Space at 11212 Grandview Avenue in downtown Wheaton.",
       story: [
-        "Unit 103 is a residence at 11212 Grandview Avenue in Wheaton. Unit 107 is a separate residence in the same building.",
+        "Unit 103 is a space at 11212 Grandview Avenue in Wheaton. Unit 107 is a separate space in the same building.",
         "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
       ]
     },
@@ -57,15 +56,14 @@ const DRAKA = {
       id: "11212-grandview-avenue-unit-107",
       name: "11212 Grandview Avenue, Unit 107",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Wheaton",
       street: "11212 Grandview Avenue",
       unit: "Unit 107",
       role: "Owned",
-      summary: "Residence at 11212 Grandview Avenue in downtown Wheaton.",
+      summary: "Space at 11212 Grandview Avenue in downtown Wheaton.",
       story: [
-        "Unit 107 is a residence at 11212 Grandview Avenue in Wheaton. Unit 103 is a separate residence in the same building.",
+        "Unit 107 is a space at 11212 Grandview Avenue in Wheaton. Unit 103 is a separate space in the same building.",
         "The address is on Grandview Avenue in downtown Wheaton, near the Wheaton Metro."
       ]
     },
@@ -459,35 +457,32 @@ const DRAKA = {
       id: "4312-hamilton-street",
       name: "4312 Hamilton Street",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4312 Hamilton Street",
       role: "Owned",
-      summary: "Home at 4312 Hamilton Street in Hyattsville.",
+      summary: "Property at 4312 Hamilton Street in Hyattsville.",
       story: [
-        "4312 Hamilton Street is a home in Hyattsville. It is listed separately from 4314 Hamilton Street and from the residences at 4318 Hamilton Street."
+        "4312 Hamilton Street is a property in Hyattsville. It is listed separately from 4314 Hamilton Street and from the spaces at 4318 Hamilton Street."
       ]
     },
     {
       id: "4314-hamilton-street",
       name: "4314 Hamilton Street",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4314 Hamilton Street",
       role: "Owned",
-      summary: "Home at 4314 Hamilton Street in Hyattsville.",
+      summary: "Property at 4314 Hamilton Street in Hyattsville.",
       story: [
-        "4314 Hamilton Street is a home in Hyattsville. It is listed separately from 4312 Hamilton Street and from the residences at 4318 Hamilton Street."
+        "4314 Hamilton Street is a property in Hyattsville. It is listed separately from 4312 Hamilton Street and from the spaces at 4318 Hamilton Street."
       ]
     },
     {
       id: "4318-hamilton-street-unit-8",
       name: "4318 Hamilton Street, Unit 8",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -495,15 +490,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 8 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 8 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 8 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-10",
       name: "4318 Hamilton Street, Unit 10",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -511,15 +505,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 10 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 10 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 10 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-14-16-17",
       name: "4318 Hamilton Street, Unit 14/16/17",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -527,15 +520,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 14/16/17 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 14/16/17 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 14/16/17 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-103-105",
       name: "4318 Hamilton Street, Unit 103/105",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -543,15 +535,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 103/105 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 103/105 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 103/105 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-106",
       name: "4318 Hamilton Street, Unit 106",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -559,15 +550,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 106 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 106 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 106 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-107",
       name: "4318 Hamilton Street, Unit 107",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -575,15 +565,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 107 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 107 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 107 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-108",
       name: "4318 Hamilton Street, Unit 108",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -591,15 +580,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 108 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 108 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 108 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-110",
       name: "4318 Hamilton Street, Unit 110",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -607,15 +595,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 110 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 110 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 110 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-200",
       name: "4318 Hamilton Street, Unit 200",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -623,15 +610,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 200 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 200 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 200 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-203-205",
       name: "4318 Hamilton Street, Unit 203/205",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -639,15 +625,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 203/205 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 203/205 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 203/205 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-206",
       name: "4318 Hamilton Street, Unit 206",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -655,15 +640,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 206 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 206 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 206 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-207",
       name: "4318 Hamilton Street, Unit 207",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -671,15 +655,14 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 207 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 207 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 207 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
       id: "4318-hamilton-street-unit-210",
       name: "4318 Hamilton Street, Unit 210",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Hyattsville",
       street: "4318 Hamilton Street",
@@ -687,8 +670,8 @@ const DRAKA = {
       role: "Owned",
       summary: "Unit 210 at 4318 Hamilton Street in Hyattsville.",
       story: [
-        "Unit 210 is a residence at 4318 Hamilton Street in Hyattsville.",
-        "4318 Hamilton Street is a multi-unit home in Hyattsville. Each residence is listed on its own page."
+        "Unit 210 is a space at 4318 Hamilton Street in Hyattsville.",
+        "4318 Hamilton Street is a multi-unit property in Hyattsville. Each space is listed on its own page."
       ]
     },
     {
@@ -704,7 +687,7 @@ const DRAKA = {
       summary: "Barber booth at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "This barber booth is a workspace at 7930-7932 Georgia Avenue in Silver Spring. Booths 1 through 6, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -720,7 +703,7 @@ const DRAKA = {
       summary: "Booth 1 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 1 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -736,7 +719,7 @@ const DRAKA = {
       summary: "Booth 2 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 2 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -752,7 +735,7 @@ const DRAKA = {
       summary: "Booth 3 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 3 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -768,7 +751,7 @@ const DRAKA = {
       summary: "Booth 4 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 4 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -784,7 +767,7 @@ const DRAKA = {
       summary: "Booth 5 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 5 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
@@ -800,23 +783,22 @@ const DRAKA = {
       summary: "Booth 6 at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
         "Booth 6 is a barber booth at 7930-7932 Georgia Avenue in Silver Spring. The other booths, and Unit 105, are listed separately.",
-        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a residence in the same building, not a booth."
+        "The booths are workspaces at 7930-7932 Georgia Avenue in Silver Spring. Unit 105 is a separate space in the same building, not a booth."
       ]
     },
     {
       id: "7930-7932-georgia-avenue-unit-105",
       name: "7930-7932 Georgia Avenue, Unit 105",
       intent: "rent",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Silver Spring",
       street: "7930-7932 Georgia Avenue",
       unit: "Unit 105",
       role: "Owned",
-      summary: "Residence at 7930-7932 Georgia Avenue in Silver Spring.",
+      summary: "Space at 7930-7932 Georgia Avenue in Silver Spring.",
       story: [
-        "Unit 105 is a residence at 7930-7932 Georgia Avenue in Silver Spring. The barber booths at this address are separate listings.",
-        "The residence is in the same building as the booths. It is not a booth."
+        "Unit 105 is a space at 7930-7932 Georgia Avenue in Silver Spring. The barber booths at this address are separate listings.",
+        "The space is in the same building as the booths. It is not a booth."
       ]
     },
     {
@@ -837,14 +819,13 @@ const DRAKA = {
       id: "950-sligo-avenue",
       name: "950 Sligo Avenue",
       intent: "sale",
-      type: "Residential",
       state: "Maryland",
       neighborhood: "Silver Spring",
       street: "950 Sligo Avenue",
       role: "Owned",
       summary: "950 Sligo Avenue in downtown Silver Spring, for sale.",
       story: [
-        "950 Sligo Avenue is in downtown Silver Spring and is offered for sale.",
+        "950 Sligo Avenue is a property in downtown Silver Spring and is offered for sale.",
         "The price is not posted. Ask the office for the price and for a viewing."
       ]
     }
