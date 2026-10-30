@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=32">
+  <link rel="stylesheet" href="css/styles.css?v=33">
 </head>
 <body data-page="about">
   <a class="skip" href="#main">Skip to content</a>
@@ -54,73 +54,87 @@
         <span class="scroll-line" aria-hidden="true"></span>
       </a>
     </section>
-    <section class="section" id="page">
-      <div class="wrap about-copy">
-        <article class="about-block">
+    <div class="about-page">
+      <section class="about-intro" id="page">
+        <div class="wrap">
           <h2>For buyers, sellers, and property owners.</h2>
-          <p>Based in Bethesda, DRAKA works with buyers, sellers, and property owners across Maryland, Virginia, and Washington, D.C.</p>
-          <p>The work brings together brokerage, property management, and improvements and repairs.</p>
-          <p>DRAKA is the name of DL Management, a brokerage in Bethesda, Maryland.</p>
-        </article>
+          <p class="about-lead">The work brings together brokerage, property management, and improvements and repairs.</p>
+          <p class="about-name">DRAKA is the name of DL Management, a brokerage in Bethesda, Maryland.</p>
+        </div>
+      </section>
 
-        <article class="about-block">
-          <h2>Buying and selling</h2>
-          <p>For a purchase, DRAKA handles search, valuation, and negotiation for residential and investment property in Maryland, Virginia, and the District.</p>
-          <p>For a sale, the work is pricing, preparation, and marketing. An open listing shows the rent or sale price when one is posted.</p>
-          <p><a href="services.html">Brokerage</a></p>
-        </article>
+      <section class="about-services" aria-label="Services">
+        <div class="wrap">
+          <article class="about-service">
+            <h2>Buying and selling</h2>
+            <div class="about-service-copy">
+              <p>For a purchase, the work is search, valuation, and negotiation for residential and investment property in Maryland, Virginia, and the District.</p>
+              <p>For a sale, the work is pricing, preparation, and marketing. An open listing shows the rent or sale price when one is posted.</p>
+              <a class="about-action" href="services.html">Explore brokerage services</a>
+            </div>
+          </article>
+          <article class="about-service">
+            <h2>Property management</h2>
+            <div class="about-service-copy">
+              <p>Management covers houses, apartments, and mixed-use property. Services and fees are tailored after a consultation.</p>
+              <p>A scope can include leasing and renewals, maintenance and capital planning, rent, payables, monthly statements, resident communication, and sales representation when an owner is ready to sell. A walk-through reviews condition, rental information, and the local requirements that apply. A rent opinion follows the inspection. No occupancy is guaranteed in advance.</p>
+              <a class="about-action" href="services.html#owners">Discuss property management</a>
+            </div>
+          </article>
+          <article class="about-service">
+            <h2>Improvements and repairs</h2>
+            <div class="about-service-copy">
+              <p>An estimate covers a home, a business, or a rental property. The work is quoted and billed separately from rent.</p>
+              <p>The property is assessed before the estimate, and you see the written scope before work starts. <a href="improvements.html#financing">Financing for that work</a> may be available through Acorn Finance.</p>
+              <a class="about-action" href="improvements.html#estimate">Request an estimate</a>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        <article class="about-block">
-          <h2>Property management</h2>
-          <p>Management covers houses, apartments, and mixed-use property. Services and fees are tailored after a consultation.</p>
-          <p>A scope can include leasing and renewals, maintenance and capital planning, rent, payables, and monthly statements, resident communication, and sales representation when an owner is ready to sell.</p>
-          <p><a href="services.html#owners">For owners</a></p>
-        </article>
+      <section class="about-method" aria-labelledby="method-title">
+        <div class="wrap">
+          <h2 id="method-title">How we work</h2>
+          <div class="about-steps">
+            <article class="about-step">
+              <h3>A conversation</h3>
+              <p>Share the property’s location, occupancy, and what is needed. A buyer, a seller, or someone planning an improvement describes the property and the requirements. The first conversation does not require a retainer.</p>
+            </article>
+            <article class="about-step">
+              <h3>An assessment</h3>
+              <p>The property or those requirements are assessed before a scope is set.</p>
+            </article>
+            <article class="about-step">
+              <h3>An agreed scope</h3>
+              <p>The scope is agreed from that assessment.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <article class="about-block">
-          <h2>Improvements and repairs</h2>
-          <p>An estimate covers a home, a business, or a rental property. The work is quoted and billed separately from rent.</p>
-          <p>The property is assessed before the estimate, and you see the written scope before work starts. <a href="improvements.html#financing">Financing for that work</a> may be available through Acorn Finance.</p>
-          <p><a href="improvements.html#estimate">Request an estimate</a></p>
-        </article>
+      <section class="about-banner" aria-labelledby="where-title">
+        <div class="wrap">
+          <h2 id="where-title">Where we work</h2>
+          <ul class="about-places">
+            <li>Maryland</li>
+            <li>Northern Virginia</li>
+            <li>Washington, D.C.</li>
+          </ul>
+          <p class="about-office">The office is in Bethesda, by appointment. Buyers, sellers, and property owners are served across these places from that office.</p>
+        </div>
+      </section>
 
-        <article class="about-block">
-          <h2>How we work</h2>
-          <h3>An initial conversation</h3>
-          <p>Work starts with a conversation. An owner shares the property’s location, occupancy, and what is needed. That first conversation does not require a retainer.</p>
-          <p>A buyer, a seller, or someone planning an improvement describes the property and the requirements.</p>
-          <h3>An assessment</h3>
-          <p>DRAKA then assesses the property or those requirements. Management uses a walk-through to review condition, rental information, and the local requirements that apply. A rent opinion follows the inspection.</p>
-          <p>An improvement or repair is assessed before an estimate is prepared.</p>
-          <h3>An agreed scope</h3>
-          <p>The scope is agreed from that assessment. Management can cover leasing, maintenance, accounting, and reporting, with services and fees tailored after the consultation.</p>
-          <p>Improvements and repairs are a written estimate you see before any work starts. No occupancy is guaranteed in advance.</p>
-        </article>
-      </div>
-    </section>
-    <section class="about-banner" aria-labelledby="where-title">
-      <div class="wrap about-copy">
-        <h2 id="where-title">Where we work</h2>
-        <ul class="about-places">
-          <li>Maryland</li>
-          <li>Northern Virginia</li>
-          <li>Washington, D.C.</li>
-        </ul>
-        <p class="about-office">The office is in Bethesda, by appointment. Buyers, sellers, and property owners are served across these places from that office.</p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="wrap about-copy">
-        <article class="about-block">
+      <section class="about-close">
+        <div class="wrap">
           <h2>Let’s discuss your property.</h2>
           <p>Tell us about a purchase, a sale, a property you own, or an estimate. Call <a data-phone href="tel:+12024139222">202-413-9222</a>, or write through the contact form.</p>
           <p class="about-actions">
             <a class="btn" href="contact.html">Contact the team</a>
             <a class="btn-line" href="properties.html">Explore properties</a>
           </p>
-        </article>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </main>
   <footer class="site-footer">
     <div class="wrap foot-grid">

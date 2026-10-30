@@ -1551,90 +1551,180 @@ body[data-page="improvements"] #maintenance .callout { margin-bottom: 1.5rem; }
 }
 .bio-unresolved { margin-top: 0.85rem; color: #8d3b32; font-weight: 600; max-width: 36rem; }
 
-/* About body only. Does not restyle the hero, header, footer, or other pages. */
-body[data-page="about"] #page { padding-bottom: clamp(2.4rem, 4.5vw, 3.4rem); }
-body[data-page="about"] .about-copy { max-width: 40rem; }
-body[data-page="about"] .about-block {
-  padding: 1.35rem 0 1.45rem;
+/* About body below the hero. Scoped so it cannot restyle the hero, header, footer, or other pages. */
+.about-page {
+  --about-heading: clamp(2rem, 2.55vw, 2.3rem);
+  --about-body: 1.1875rem;
+  color: var(--ink);
+}
+.about-page .about-intro {
+  padding: clamp(3.1rem, 5.5vw, 4.4rem) 0 clamp(0.4rem, 1.5vw, 0.8rem);
+}
+.about-page .about-intro h2 {
+  max-width: 16ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.15rem, 3.2vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.about-page .about-lead {
+  max-width: 34em;
+  margin: 1.15rem 0 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.about-page .about-name {
+  max-width: 42rem;
+  margin: 1.05rem 0 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.about-page .about-services { padding-bottom: 0.25rem; }
+.about-page .about-service {
+  display: grid;
+  grid-template-columns: minmax(11.5rem, 16.5rem) minmax(0, 38rem);
+  justify-content: start;
+  gap: 0.8rem 2.75rem;
+  align-items: start;
+  padding: 1.85rem 0;
   border-top: 1px solid var(--line);
 }
-body[data-page="about"] .about-block:first-child { border-top: 0; padding-top: 0; }
-body[data-page="about"] .about-copy h2 {
+.about-page .about-service h2,
+.about-page .about-method h2,
+.about-page .about-close h2 {
+  margin: 0;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.28rem, 1.5vw, 1.5rem);
+  font-size: var(--about-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+.about-page .about-service-copy p,
+.about-page .about-step p,
+.about-page .about-close p {
+  max-width: 38rem;
+  margin: 0.85rem 0 0;
+  font-family: var(--sans);
+  font-size: var(--about-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+}
+.about-page .about-service-copy p:first-child,
+.about-page .about-step p,
+.about-page .about-close p { margin-top: 0; }
+.about-page .about-service-copy p + p { margin-top: 0.85rem; }
+.about-page .about-service-copy a:not(.about-action) {
+  color: var(--navy);
+  text-underline-offset: 0.16em;
+}
+.about-page .about-action {
+  display: inline-block;
+  margin-top: 1.05rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--navy);
+  text-underline-offset: 0.18em;
+}
+.about-page .about-action:hover { color: var(--brass); }
+.about-page .about-method {
+  padding: clamp(2.2rem, 4vw, 3.1rem) 0 clamp(2.6rem, 4.5vw, 3.5rem);
+}
+.about-page .about-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem 2rem;
+  margin-top: 1.5rem;
+}
+.about-page .about-step {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+.about-page .about-step h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.35rem, 1.6vw, 1.55rem);
   letter-spacing: -0.02em;
   line-height: 1.2;
-  margin: 0;
 }
-body[data-page="about"] .about-copy h3 {
+.about-page .about-step p { margin-top: 0.65rem; }
+.about-page .about-banner {
+  background: var(--navy);
+  color: white;
+  padding: clamp(2.4rem, 4.5vw, 3.4rem) 0;
+}
+.about-page .about-banner h2 {
+  margin: 0;
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 1.12rem;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin: 1.15rem 0 0;
+  font-size: var(--about-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  color: #e4d3b0;
 }
-body[data-page="about"] .about-copy h2 + h3 { margin-top: 0.7rem; }
-body[data-page="about"] .about-copy p {
-  max-width: 38rem;
-  margin: 0.55rem 0 0;
-  color: var(--ink);
-  font-size: 1.02rem;
-  line-height: 1.55;
+.about-page .about-places {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
 }
-body[data-page="about"] .about-copy a:not(.btn):not(.btn-line) {
+.about-page .about-places li {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+.about-page .about-office {
+  max-width: 42rem;
+  margin: 1.2rem 0 0;
+  font-family: var(--sans);
+  font-size: var(--about-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+.about-page .about-close {
+  padding: clamp(2.6rem, 4.8vw, 3.6rem) 0 clamp(3rem, 5.5vw, 4.2rem);
+}
+.about-page .about-close p { max-width: 42rem; }
+.about-page .about-close a:not(.btn):not(.btn-line) {
   color: var(--navy);
   font-weight: 600;
   text-underline-offset: 0.16em;
 }
-body[data-page="about"] .about-actions {
+.about-page .about-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  margin-top: 1.1rem;
+  margin-top: 1.25rem;
 }
-body[data-page="about"] .about-banner {
-  background: var(--navy);
-  color: white;
-  padding: clamp(2.3rem, 4.5vw, 3.3rem) 0;
-}
-body[data-page="about"] .about-banner h2 {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(1.28rem, 1.5vw, 1.5rem);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  color: #e4d3b0;
-  margin: 0;
-}
-body[data-page="about"] .about-places {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem 1.5rem;
-  margin: 1.15rem 0 0;
-  padding: 0;
-}
-body[data-page="about"] .about-places li {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 1.22rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  white-space: nowrap;
-  padding-top: 0.7rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-}
-body[data-page="about"] .about-banner .about-office {
-  max-width: 36rem;
-  margin: 1.15rem 0 0;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.55;
-}
-body[data-page="about"] .section:last-of-type { padding-top: clamp(2.4rem, 4.5vw, 3.4rem); }
-@media (max-width: 640px) {
-  body[data-page="about"] .about-places { grid-template-columns: 1fr; }
-  body[data-page="about"] .about-actions .btn,
-  body[data-page="about"] .about-actions .btn-line { width: 100%; max-width: 22rem; }
+@media (max-width: 720px) {
+  .about-page { --about-body: 1.0625rem; --about-heading: clamp(1.7rem, 7.2vw, 2rem); }
+  .about-page .about-intro h2 { font-size: clamp(1.9rem, 8.4vw, 2.35rem); max-width: 14ch; }
+  .about-page .about-lead { font-size: 1.2rem; }
+  .about-page .about-service,
+  .about-page .about-steps,
+  .about-page .about-places { grid-template-columns: 1fr; }
+  .about-page .about-service { gap: 0.7rem; padding: 1.45rem 0; }
+  .about-page .about-steps { gap: 1.15rem; }
+  .about-page .about-places li { white-space: normal; }
+  .about-page .about-actions .btn,
+  .about-page .about-actions .btn-line { width: 100%; max-width: 22rem; }
 }
