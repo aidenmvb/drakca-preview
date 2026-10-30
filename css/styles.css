@@ -1552,41 +1552,89 @@ body[data-page="improvements"] #maintenance .callout { margin-bottom: 1.5rem; }
 .bio-unresolved { margin-top: 0.85rem; color: #8d3b32; font-weight: 600; max-width: 36rem; }
 
 /* About body only. Does not restyle the hero, header, footer, or other pages. */
-body[data-page="about"] .about-copy { max-width: 42rem; }
-body[data-page="about"] .about-copy h2 {
-  font-size: clamp(1.85rem, 3vw, 2.45rem);
-  margin: 2.15rem 0 0.65rem;
+body[data-page="about"] #page { padding-bottom: clamp(2.4rem, 4.5vw, 3.4rem); }
+body[data-page="about"] .about-copy { max-width: 40rem; }
+body[data-page="about"] .about-block {
+  padding: 1.35rem 0 1.45rem;
+  border-top: 1px solid var(--line);
 }
-body[data-page="about"] .about-copy h2:first-child { margin-top: 0; }
-body[data-page="about"] .about-copy h3 {
-  font-size: clamp(1.45rem, 2vw, 1.8rem);
+body[data-page="about"] .about-block:first-child { border-top: 0; padding-top: 0; }
+body[data-page="about"] .about-copy h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.28rem, 1.5vw, 1.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   margin: 0;
 }
+body[data-page="about"] .about-copy h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 1.15rem 0 0;
+}
+body[data-page="about"] .about-copy h2 + h3 { margin-top: 0.7rem; }
 body[data-page="about"] .about-copy p {
-  max-width: 40rem;
-  margin-top: 0.7rem;
+  max-width: 38rem;
+  margin: 0.55rem 0 0;
   color: var(--ink);
+  font-size: 1.02rem;
   line-height: 1.55;
 }
 body[data-page="about"] .about-copy a:not(.btn):not(.btn-line) {
   color: var(--navy);
-  text-underline-offset: 0.15em;
+  font-weight: 600;
+  text-underline-offset: 0.16em;
 }
-body[data-page="about"] .about-lead {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 16rem));
-  gap: 1rem 2rem;
-  margin-top: 0.85rem;
-}
-body[data-page="about"] .about-lead p { color: var(--muted); margin-top: 0.25rem; }
 body[data-page="about"] .about-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1.1rem;
 }
+body[data-page="about"] .about-banner {
+  background: var(--navy);
+  color: white;
+  padding: clamp(2.3rem, 4.5vw, 3.3rem) 0;
+}
+body[data-page="about"] .about-banner h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.28rem, 1.5vw, 1.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #e4d3b0;
+  margin: 0;
+}
+body[data-page="about"] .about-places {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+body[data-page="about"] .about-places li {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.22rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+body[data-page="about"] .about-banner .about-office {
+  max-width: 36rem;
+  margin: 1.15rem 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.55;
+}
+body[data-page="about"] .section:last-of-type { padding-top: clamp(2.4rem, 4.5vw, 3.4rem); }
 @media (max-width: 640px) {
-  body[data-page="about"] .about-lead { grid-template-columns: 1fr; }
+  body[data-page="about"] .about-places { grid-template-columns: 1fr; }
   body[data-page="about"] .about-actions .btn,
   body[data-page="about"] .about-actions .btn-line { width: 100%; max-width: 22rem; }
 }
