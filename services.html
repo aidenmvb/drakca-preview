@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=29">
+  <link rel="stylesheet" href="css/styles.css?v=31">
 </head>
 <body data-page="services">
   <a class="skip" href="#main">Skip to content</a>
@@ -66,37 +66,39 @@
           <p class="eyebrow">Brokerage</p>
           <h2>Our services.</h2>
         </header>
-        <div class="offer-board">
-          <article class="offer-primary" id="management">
-            <p class="kicker">Buyers</p>
-            <h3>Buyer representation</h3>
-            <p>Search, valuation, and negotiation for residential and investment purchases in Maryland, Virginia, and the District.</p>
-            <a class="btn" href="contact.html?topic=brokerage">Talk with us</a>
-          </article>
-          <article class="offer-side" id="leasing">
-            <p class="kicker">Sellers</p>
-            <h3>Seller representation</h3>
-            <p>Pricing, preparation, and marketing for an owner bringing a property to market.</p>
-            <a class="text-action" href="contact.html?topic=sale">Discuss a sale</a>
-          </article>
-          <article class="offer-side offer-side-quiet" id="maintenance">
-            <p class="kicker">Investment</p>
-            <h3>Investment property</h3>
-            <p>Guidance on buying and selling investment properties.</p>
-            <a class="text-action" href="contact.html?topic=brokerage">Ask about a property</a>
-          </article>
-          <article class="offer-wide" id="accounting">
+        <div class="edit-index">
+          <article id="management">
+            <p class="num">01</p>
             <div>
-              <p class="kicker">Owners</p>
+              <h3>Buyer representation</h3>
+              <p>Search, valuation, and negotiation for residential and investment purchases in Maryland, Virginia, and the District.</p>
+            </div>
+          </article>
+          <article id="leasing">
+            <p class="num">02</p>
+            <div>
+              <h3>Seller representation</h3>
+              <p>Pricing, preparation, and marketing for an owner bringing a property to market.</p>
+            </div>
+          </article>
+          <article id="maintenance">
+            <p class="num">03</p>
+            <div>
+              <h3>Investment property</h3>
+              <p>Guidance on buying and selling investment properties.</p>
+            </div>
+          </article>
+          <article id="accounting">
+            <p class="num">04</p>
+            <div>
               <h3>Owner advisory</h3>
               <p>Services and fees are tailored to your property following a consultation.</p>
             </div>
-            <a class="btn" href="#owners">For owners</a>
           </article>
         </div>
-        <details class="support-panel" id="rules">
-          <summary>Local requirements</summary>
-          <div class="support-body">
+        <div class="edit-practice">
+          <article id="rules">
+            <h3>Local requirements</h3>
             <p>Each property follows the rules of its jurisdiction. Our services do not include legal advice.</p>
             <dl class="edit-defs">
               <div>
@@ -108,8 +110,8 @@
                 <dd>Licensing, local rental rules, and the county where the building sits.</dd>
               </div>
             </dl>
-          </div>
-        </details>
+          </article>
+        </div>
         <div class="edit-bridge">
           <div>
             <p class="eyebrow">Repairs</p>
@@ -129,21 +131,24 @@
           <h2>For property owners.</h2>
           <p class="lede">Houses, apartments, and mixed-use property in Maryland, Virginia, and Washington, D.C.</p>
         </header>
-        <ol class="owner-rail">
-          <li>
+        <div class="steps">
+          <article class="step">
+            <p class="num">01</p>
             <h3>A conversation</h3>
             <p>Share the property’s location, occupancy, and what you need. The first conversation does not require a retainer.</p>
-          </li>
-          <li>
+          </article>
+          <article class="step">
+            <p class="num">02</p>
             <h3>A walk-through</h3>
             <p>We visit the property to assess its condition, review rental information, and identify applicable local requirements.</p>
-          </li>
-          <li>
+          </article>
+          <article class="step">
+            <p class="num">03</p>
             <h3>A tailored scope</h3>
-            <p>The scope can cover leasing, maintenance, accounting, and reporting.</p>
-          </li>
-        </ol>
-        <div class="owner-facts">
+            <p>Services and fees are tailored to your property following a consultation. The scope can cover leasing, maintenance, accounting, and reporting.</p>
+          </article>
+        </div>
+        <div class="edit-split">
           <div>
             <h3>Management services</h3>
             <ul class="list">
@@ -164,9 +169,7 @@
             </ul>
           </div>
         </div>
-        <div class="inquiry-stage" id="owner-start">
-          <img class="inquiry-stage-photo" src="images/stair.jpg" alt="" width="832" height="1248" loading="lazy" decoding="async">
-          <div class="inquiry-block">
+        <div class="inquiry-block" id="owner-start">
           <div>
             <p class="eyebrow">Start</p>
             <h2>Tell us about the property.</h2>
@@ -194,7 +197,6 @@
               <p>The office inbox accepted this message. We will reply to schedule a time to see the property. If it cannot wait, call <a data-phone href=""></a>.</p>
             </div>
           </div>
-        </div>
         </div>
         <div class="faq">
           <details>
